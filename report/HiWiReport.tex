@@ -1,0 +1,42 @@
+\documentclass[]{report}
+
+
+% Title Page
+\title{What I did at Fraunhofer IGD}
+\author{Seyedmorteza Mostajabodaveh}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In November 2014, I moved to Darmstadt to work in Fraunhofer IGD and do my master thesis. In this report, I will present the tasks which I have done beside my master thesis at Fraunhofer IGD as Hiwi. Additionally, my supervisor Andreas Dietrich (TODO:AndreasEmailAddress) which was working at Fraunhofer IGD before was directing me toward these tasks. You can contact him for more information.
+\end{abstract}
+
+\textbf{VELaSSCo project}. "Visualization for Extremely Large Scale Scientific Computing" known as VELaSSCo is an EC funded project which deals with end-user visualization of Big Data. The idea behind this project is to store the datasets on a distributed database like HBase (Hadoop) or EDM. The user can query a specific part of data in the database or a specific operation on the data in the database,e.g.~Figure XX show the query for boundary mesh of telescope dataset which is processed on the fly on HPC and then the data is being transfered directly to the user computer or being stored in the database.
+
+In this project, I mainly focused on implementing two direct result queries used for querying results on a specific vertex indices, and querying mesh draw data for models in the database. Mesh drawing data query result needed to be returned in a GPU friendly format, so the received data on the client side can be copied directly into an OpenGL buffer directly. I implemented these two queries using Thrift C++ API. On the client side, I implemented a plug-in to support VELaSSCo Plugin for indoor application called Rapid Prototyping Environment (RPE). This plugin is able to:
+
+\begin{itemize}
+	\item query for available models, their analysis, results, meshes, and static meshes.
+	\item Query for computing boundary mesh of a specific dataset.
+	\item Query for Finite Element Meshes (FEM) / Discrete Element Meshes (DEM) and render them.
+	\item Query for results on a specific node (or evaluation in all time steps).
+	\item Query for different timesteps for DEM cases and create an animation.
+\end{itemize}
+
+\textbf{Ray-tracing higher-order primitives}. This task starts with a simple example which was rendering of a pipecube using pipes which are made of two spheres and one cylinder. The GPU version was implemented by Andreas Dietrich and I implemented the CPU version. The CPU version was able to handle very big pipecubes (Figure XX). This was an starting idea for implementing a version which uses the AVEIVA's RMV files to produce the factory models with higher order primtives (Sphere, Box, ...) and then ray-trace it on CPU or GPU. I implemented a factory viewer which ray-trace a group of factories on the CPU and GPU (Figure XX, YY, ZZ).
+
+\textbf{PCB board software rasterizer}. Implementing a software rasterizer for rendering triangulated PCB boards (Figure XX).
+
+\textbf{Virtual Reality}. Doing some bug fixing for Oculus rift plug-in. Extending the plug-in for specific projects, to support a player camera inside the scene (Figure XX). Additionally, adding some features to RPE to control the camera using Leap Motion (Figure XX).
+
+\textbf{Other Tasks}.
+\begin{itemize}
+	\item Implementing unstructured simulation mesh support into RPE.
+	\item Adding very large screenshot capturing to RPE.
+	\item Implementing cross-section for unstructured simulation meshes.
+\end{itemize}
+ 
+
+\end{document}          

@@ -24,20 +24,18 @@
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-\name{John}{Doe}
-\title{Resumé title}                               % optional, remove / comment the line if not wanted
-\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
-\phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-\phone[fixed]{+2~(345)~678~901}
-\phone[fax]{+3~(456)~789~012}
-\email{john@doe.org}                               % optional, remove / comment the line if not wanted
-\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
-\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
-\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
-\social[github]{jdoe}                              % optional, remove / comment the line if not wanted
+\name{Seyedmorteza}{Mostajabodaveh}
+%\title{}                               % optional, remove / comment the line if not wanted
+\address{Kasinostr. 24}{64293 Darmstadt}{Germany}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+49~(170)~548~5750}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{mostajab@in.tum.de}                               % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+%\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
+\social[twitter]{https://twitter.com/mmostajab}                             % optional, remove / comment the line if not wanted
+\social[github]{https://github.com/mmostajab}                              % optional, remove / comment the line if not wanted
 \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
 \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+\quote{computer graphics and visualization fan and researcher}                                 % optional, remove / comment the line if not wanted
 
 % bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
 %   to show numerical labels in the bibliography (default is to show no labels)
@@ -57,41 +55,38 @@
 \makecvtitle
 
 \section{Education}
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}  % arguments 3 to 6 can be left empty
-\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+\cventry{2012--Present}{Master of computer science}{Technische Universit\"at M\"unchen}{Munich}{\textit{Grade}}{Specialization: Computer graphics and visualization}  % arguments 3 to 6 can be left empty
+\cventry{2006--2011}{Bacholer of computer engineering}{Hamedan University of Technology}{Hamedan, Iran}{\textit{15.04} out of 20.0}{Description}
 
 \section{Master thesis}
-\cvitem{title}{\emph{Title}}
-\cvitem{supervisors}{Supervisors}
-\cvitem{description}{Short thesis abstract}
+\cvitem{title}{\emph{Real-time streamsurface computation and rendering}}
+\cvitem{supervisors}{Prof.Dr. Westermann}
+\cvitem{advisors}{Dr. Andreas Dietrich, Dr. Frank Michel}
+\cvitem{description}{Streamsurfaces are one of the powerful visualization tools, which are used to gain insight into characteristics and features of flow fields. In practice, streamsurfaces are approximated by triangulating adjacent pairs of integral curves, originating from a seeding line. The generation of integral curves bears quite some similarities to ray tracing algorithms used in physically based renderers. Although, the techniques used in ray tracing may not have good performance in the streamline computation context due to their different computational nature, they can be optimized for streamline computation by introducing some modifications. In this master thesis, I present my work on accurate streamsurface computation and rendering in real-time, by exploiting the scalability and portability features of parallel architectures in heterogeneous computing, and utilizing concepts from physically based rendering. To improve the efficiency, I use a scheduler to divide the streamsurface computation and rendering tasks on different devices proportional to their computation powers. Additionally, I apply and evaluate different acceleration structures and the concepts of caching to improve the efficiency and utilization of streamsurface generation on modern GPUs and CPUs to achieve real-time results. Furthermore, the possible impact of applying ray-packing and ray-sorting to the streamline computation is investigated.}
+
+\section{Bachelor thesis}
+\cvitem{title}{\emph{Incorporating affective states of players in video games}}
+\cvitem{supervisors}{Dr. Muharram Mansoorizadeh}
+\cvitem{description}{Video games are very popular, these days. They use different ways to interact with users. Keyboards, mouse, Joysticks, and recently camera are among the popular interaction devices. While technology involved in game industry develops new interactive devices to get user’s interactions that capture lots of player’s inputs, the games just use player’s voluntary interactions. However, spontaneous behaviors of players are of much value in playing games, the players do not use involuntary interactions. Among several available representations for affects, two-dimensional continuous Activation/Evaluation(Valence) space has been adopted. We can determine the player’s preferences in the environment by comparing his or her playing to the player’s valence and activity in real‐time. The information can be used to modify the objects mesh appearance and positions, actor’s behavior and particle systems parameters, to make the environment more attractive for players and create a unique experience during each session. (Score:20/20).}
 
 \section{Experience}
 \subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
+\cventry{2014--2016}{Student Job}{Fraunhofer IGD}{Darmstadt}{}{Computer graphics research and developments.\newline{}%
 Detailed achievements:%
 \begin{itemize}%
-\item Achievement 1;
-\item Achievement 2, with sub-achievements:
-  \begin{itemize}%
-  \item Sub-achievement (a);
-  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-    \begin{itemize}
-    \item Sub-sub-achievement i;
-    \item Sub-sub-achievement ii;
-    \item Sub-sub-achievement iii;
-    \end{itemize}
-  \item Sub-achievement (c);
-  \end{itemize}
-\item Achievement 3.
+\item VELaSSCo project development;
+\item Higher-order primitive ray-tracer implemented in Intel Embree and NVIDIA OptiX.
+\item Software-rasterizer for PCB board rendering.
+\item Virtual reality development with LEAP Motion and Oculus SDK.
 \end{itemize}}
 \cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
 \subsection{Miscellaneous}
 \cventry{year--year}{Job title}{Employer}{City}{}{Description}
 
 \section{Languages}
-\cvitemwithcomment{Language 1}{Skill level}{Comment}
-\cvitemwithcomment{Language 2}{Skill level}{Comment}
-\cvitemwithcomment{Language 3}{Skill level}{Comment}
+\cvitemwithcomment{English}{Skill level}{}
+\cvitemwithcomment{Persian}{Skill level}{}
+\cvitemwithcomment{German}{Elementary}{}
 
 \section{Computer skills}
 \cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
