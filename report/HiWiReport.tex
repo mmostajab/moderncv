@@ -1,3 +1,4 @@
+
 \documentclass[]{report}
 
 \usepackage{subfig}
@@ -5,6 +6,7 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
+\usepackage{hyperref}
 
 % Title Page
 \title{What I did at Fraunhofer IGD}
@@ -15,7 +17,8 @@
 \maketitle
 
 \begin{abstract}
-In November 2014, I moved to Darmstadt to work in Fraunhofer IGD and do my master thesis. In this report, I will present the tasks which I have done beside my master thesis at Fraunhofer IGD as Hiwi. Additionally, my supervisor Andreas Dietrich (TODO:AndreasEmailAddress) which was working at Fraunhofer IGD before was directing me toward these tasks. You can contact him for more information.
+In November 2014, I moved to Darmstadt to work in Fraunhofer IGD and do my master thesis. In this report, I will present the tasks which I have done beside my master thesis at Fraunhofer IGD as Hiwi. Additionally, my supervisor Andreas Dietrich (\href{andi.dietrich@googlemail.com}{andi.dietrich@googlemail.com}) which was working at Fraunhofer IGD before was directing me toward these tasks. You can contact him for more information.
+
 \end{abstract}
 
 \begin{figure}[!ht]
@@ -67,18 +70,49 @@ In November 2014, I moved to Darmstadt to work in Fraunhofer IGD and do my maste
 		\includegraphics[width=0.2\textwidth]{./figs/particles/new/12.png}
 	}
 	\hfill
-	\caption[Virtual Reality]{\textbf{Particle Visualization} in VELaSSCo.}
+	\caption[Query particles from HBase database and their visualization]{\textbf{Query particles from HBase database and their visualization} in VELaSSCo.}
 	\label{fig:particles}
 \end{figure}
 
-\textbf{VELaSSCo project}. "Visualization for Extremely Large Scale Scientific Computing" known as VELaSSCo is an EC funded project which deals with end-user visualization of Big Data. The idea behind this project is to store the datasets on a distributed database like HBase (Hadoop) or EDM. The user can query a specific part of data in the database or a specific operation on the data in the database,e.g.~Figure XX show the query for boundary mesh of telescope dataset which is processed on the fly on HPC and then the data is being transfered directly to the user computer or being stored in the database.
+\begin{figure}[!ht]
+	\subfloat{%
+		\includegraphics[width=0.53\textwidth]{./figs/velassco/telescope1.png}
+	}
+	\hfill
+	\subfloat{%
+		\includegraphics[width=0.43\textwidth]{./figs/velassco/telescope2.png}
+	}
+	\hfill
+	\caption[Telescope Boundary Mesh]{\textbf{Telescope boundary mesh} colormapped with pressure values in left figure and partition IDs in right figure. First the telescope boundary mesh is queried from the HBase database and then the results on the boundary is being queried from HBase database. The colormapping is done on the clinet side.}
+	\label{fig:telescope}
+\end{figure}
+
+\begin{figure}[!ht]
+	\subfloat{%
+		\includegraphics[width=0.375\textwidth]{./figs/velassco/getmesh1.png}
+	}
+	\hfill
+	\subfloat{%
+		\includegraphics[width=0.28\textwidth]{./figs/velassco/getmesh2.png}
+	}
+	\hfill
+	\subfloat{%
+		\includegraphics[width=0.28\textwidth]{./figs/velassco/getmesh3.png}
+	}
+	\hfill
+	\caption[Getting simulation mesh informaton]{\textbf{Querying simulation mesh} from HBase database. The results on the surface and inside simulation mesh are queried separaretly and visualized using colormapping.}
+	\label{fig:sim_meshes}
+\end{figure}
+
+
+\textbf{VELaSSCo project}. "Visualization for Extremely Large Scale Scientific Computing" known as VELaSSCo is an EC funded project which deals with end-user visualization of Big Data. The idea behind this project is to store the datasets on a distributed database like HBase (Hadoop) or EDM. The user can query a specific part of data in the database or a specific operation on the data in the database. The user's query is processed on the HPC and the result is sent in a GPU-friendly format for the user to visualize e.g.~Figure \ref{fig:telescope} shows the boundary mesh of telescope dataset with colormapped pressure values. The user queries for the mesh boundary. The HPC computes the boundary of the mesh and send it for the user. The user sends another query to request for pressure values on the vertices of the boundary mesh. Then, the client visualizes the boundary with pressure values colormapped on its surface.
 
 In this project, I mainly focused on implementing two direct result queries used for querying results on a specific vertex indices, and querying mesh draw data for models in the database. Mesh drawing data query result needed to be returned in a GPU friendly format, so the received data on the client side can be copied directly into an OpenGL buffer directly. I implemented these two queries using Thrift C++ API. On the client side, I implemented a plug-in to support VELaSSCo Plugin for indoor application called Rapid Prototyping Environment (RPE). This plugin is able to:
-
+  
 \begin{itemize}
 	\item query for available models, their analysis, results, meshes, and static meshes.
-	\item Query for computing boundary mesh of a specific dataset.
-	\item Query for Finite Element Meshes (FEM) / Discrete Element Meshes (DEM) and render them.
+	\item Query for computing boundary mesh of a specific dataset (Figure \ref{fig:telescope}).
+	\item Query for Finite Element Meshes (FEM) / Discrete Element Meshes (DEM) and render them (Figure \ref{fig:sim_meshes}).
 	\item Query for results on a specific node (or evaluation in all time steps).
 	\item Query for different timesteps for DEM cases and create an animation.
 \end{itemize}
@@ -122,6 +156,13 @@ In this project, I mainly focused on implementing two direct result queries used
 	\hfill
 	\caption[Factory ray-tracing]{\textbf{Factory ray-tracing with Optix}.}
 	\label{fig:embreeFactory}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{./figs/stereo.png}
+	\caption[Factory ray-tracing (Stereoscopic view)]{\textbf{Factory ray-tracing (Stereoscopic view)}.}
+	\label{fig:pipecube}
 \end{figure}
 
 \textbf{Ray-tracing higher-order primitives}. This task starts with a simple example which was rendering of a pipecube using pipes which are made of two spheres and one cylinder. The GPU version was implemented by Andreas Dietrich and I implemented the CPU version using Intel Embree. The CPU version was able to handle very big pipecubes (Figure \ref{fig:pipecube}). This was an starting idea for implementing a version which uses the AVEIVA's RMV files to produce the factory models with higher order primtives (Sphere, Box, ...) and then ray-trace it on CPU or GPU. I implemented a factory viewer which ray-trace a group of factories on the CPU and GPU using Intel Embree and NVIDIA Optix (Figure XX, YY, ZZ).
@@ -175,9 +216,9 @@ In this project, I mainly focused on implementing two direct result queries used
 
 \textbf{Other Tasks}.
 \begin{itemize}
-	\item Implementing unstructured simulation mesh support into RPE.
 	\item Implementing cross-section for unstructured simulation meshes (Figure \ref{fig:crossection}).
 	\item Adding very large screenshot capturing to RPE (Figure \ref{fig:highres}).
+	\item Evaluating B-Spline on the GPU using tessellation shader (Figure \ref{fig:bspline}).
 \end{itemize}
  
 
