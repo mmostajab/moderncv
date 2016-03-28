@@ -33,8 +33,8 @@
 %\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
 \social[twitter]{https://twitter.com/mmostajab}                             % optional, remove / comment the line if not wanted
 \social[github]{https://github.com/mmostajab}                              % optional, remove / comment the line if not wanted
-\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{mypic.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \quote{computer graphics and visualization fan and researcher}                                 % optional, remove / comment the line if not wanted
 
 % bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
@@ -55,72 +55,103 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2012--Present}{Master of computer science}{Technische Universit\"at M\"unchen}{Munich}{\textit{Grade}}{Specialization: Computer graphics and visualization}  % arguments 3 to 6 can be left empty
-\cventry{2006--2011}{Bacholer of computer engineering}{Hamedan University of Technology}{Hamedan, Iran}{\textit{15.04} out of 20.0}{Description}
+\cventry{2012--Present}{Master candidate in computer science}{Technische Universit\"at M\"unchen}{Munich}{}{Specialization: Computer graphics and visualization}  % arguments 3 to 6 can be left empty
+\cventry{2006--2011}{Bacholer of computer engineering}{Hamedan University of Technology}{Hamedan, Iran}{Grade: \textit{15.04} out of 20.0}{Major: Computer hardware engineering}
+\cventry{2005--2006}{Pre-university}{National Organization for Development of Exceptional Talents' Shahid Beheshti School}{Borujerd, Iran}{}{Major: Mathematics and physics}
+\cventry{2002--2005}{High school}{National Organization for Development of Exceptional Talents' Shahid Beheshti School}{Borujerd, Iran}{}{Major: Mathematics and physics}
+
+\section{Research Interests}
+\cvitem{}{Computer Graphics and Visualization }
+\cvitem{}{Virtual Reality}
+\cvitem{}{Computer Game Development}
+\cvitem{}{Object Oriented Programming (OOP)}
 
 \section{Master thesis}
 \cvitem{title}{\emph{Real-time streamsurface computation and rendering}}
 \cvitem{supervisors}{Prof.Dr. Westermann}
 \cvitem{advisors}{Dr. Andreas Dietrich, Dr. Frank Michel}
-\cvitem{description}{Streamsurfaces are one of the powerful visualization tools, which are used to gain insight into characteristics and features of flow fields. In practice, streamsurfaces are approximated by triangulating adjacent pairs of integral curves, originating from a seeding line. The generation of integral curves bears quite some similarities to ray tracing algorithms used in physically based renderers. Although, the techniques used in ray tracing may not have good performance in the streamline computation context due to their different computational nature, they can be optimized for streamline computation by introducing some modifications. In this master thesis, I present my work on accurate streamsurface computation and rendering in real-time, by exploiting the scalability and portability features of parallel architectures in heterogeneous computing, and utilizing concepts from physically based rendering. To improve the efficiency, I use a scheduler to divide the streamsurface computation and rendering tasks on different devices proportional to their computation powers. Additionally, I apply and evaluate different acceleration structures and the concepts of caching to improve the efficiency and utilization of streamsurface generation on modern GPUs and CPUs to achieve real-time results. Furthermore, the possible impact of applying ray-packing and ray-sorting to the streamline computation is investigated.}
+\cvitem{abstract}{Streamsurfaces are one of the powerful visualization tools, which are used to gain insight into characteristics and features of flow fields. In practice, streamsurfaces are approximated by triangulating adjacent pairs of integral curves, originating from a seeding line. The generation of integral curves bears quite some similarities to ray tracing algorithms used in physically based renderers. Although, the techniques used in ray tracing may not have good performance in the streamline computation context due to their different computational nature, they can be optimized for streamline computation by introducing some modifications. In this master thesis, I present my work on accurate streamsurface computation and rendering in real-time, by exploiting the scalability and portability features of parallel architectures in heterogeneous computing, and utilizing concepts from physically based rendering. To improve the efficiency, I use a scheduler to divide the streamsurface computation and rendering tasks on different devices proportional to their computation powers. Additionally, I apply and evaluate different acceleration structures and the concepts of caching to improve the efficiency and utilization of streamsurface generation on modern GPUs and CPUs to achieve real-time results. Furthermore, the possible impact of applying ray-packing and ray-sorting to the streamline computation is investigated.}
 
 \section{Bachelor thesis}
 \cvitem{title}{\emph{Incorporating affective states of players in video games}}
-\cvitem{supervisors}{Dr. Muharram Mansoorizadeh}
-\cvitem{description}{Video games are very popular, these days. They use different ways to interact with users. Keyboards, mouse, Joysticks, and recently camera are among the popular interaction devices. While technology involved in game industry develops new interactive devices to get user’s interactions that capture lots of player’s inputs, the games just use player’s voluntary interactions. However, spontaneous behaviors of players are of much value in playing games, the players do not use involuntary interactions. Among several available representations for affects, two-dimensional continuous Activation/Evaluation(Valence) space has been adopted. We can determine the player’s preferences in the environment by comparing his or her playing to the player’s valence and activity in real‐time. The information can be used to modify the objects mesh appearance and positions, actor’s behavior and particle systems parameters, to make the environment more attractive for players and create a unique experience during each session. (Score:20/20).}
+\cvitem{supervisor}{Dr. Muharram Mansoorizadeh}
+\cvitem{abstract}{Video games are very popular, these days. They use different ways to interact with users. Keyboards, mouse, Joysticks, and recently camera are among the popular interaction devices. While technology involved in game industry develops new interactive devices to get user's interactions that capture lots of player's inputs, the games just use player's voluntary interactions. However, spontaneous behaviors of players are of much value in playing games, the players do not use involuntary interactions. Among several available representations for affects, two-dimensional continuous Activation/Evaluation(Valence) space has been adopted. We can determine the player's preferences in the environment by comparing his or her playing to the player's valence and activity in real-time. These information can be used to modify the game rules and environment to make it more attractive for players and create a unique experience during each gameplay session. (Score:20/20).}
 
 \section{Experience}
 \subsection{Vocational}
 \cventry{2014--2016}{Student Job}{Fraunhofer IGD}{Darmstadt}{}{Computer graphics research and developments.\newline{}%
 Detailed achievements:%
-\begin{itemize}%
-\item VELaSSCo project development;
-\item Higher-order primitive ray-tracer implemented in Intel Embree and NVIDIA OptiX.
-\item Software-rasterizer for PCB board rendering.
-\item Virtual reality development with LEAP Motion and Oculus SDK.
-\end{itemize}}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
-\subsection{Miscellaneous}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description}
+	\begin{itemize}%
+	\item participating in VELaSSCo EC project development;
+	\item Higher-order primitive ray-tracer implemented in Intel Embree and NVIDIA OptiX.
+	\item Virtual reality development with LEAP Motion and Oculus SDK.
+	\end{itemize}}
+\cventry{2014--2014}{Research Assistant}{TUM's TUM's Foerdertechnik Materialfluss Logistik (FML) group}{Garching bei M\"unchen}{}{Detailed achievements:%
+	\begin{itemize}%
+		\item Working on 3D-Visualization of electromagnetic field strength distribution.
+	\end{itemize}}
+\cventry{2013--2014}{Research Assistant}{TUM's Prof. Navab's (Computer Aided and Medical Procedures \& Augmented Reality) chair}{Garching bei M\"unchen}{}{Detailed achievements:%
+	\begin{itemize}%
+		\item Working on OpenGL debugging tools.
+		\item Implemnting advanced ray caster for volume rendering of medical data.
+	\end{itemize}}
+\cventry{2012--2013}{Student Job}{Developer at MetaIO GMbH}{M\"unchen}{}{Detailed achievements:%
+	\begin{itemize}%
+		\item Developing different Metaio's Junaio browser channels using HTML5, JavaScript, PHP, and MetaIO creator.
+		\item Developing a hair-coloring C++ module using Metaio SDK.
+		\item Participating into development of a game using Unity.
+		\item 3D content creation and adjustments for mobile AR scenarios using 3D Studio Max.
+	\end{itemize}}
+\cventry{2012--2012}{Student Job}{Developer at Fortiss GMbH}{M\"unchen}{}{Detailed achievements:%
+	\begin{itemize}%
+		\item Implementing an interface using windows message passing API to update the automotive system visualization in Ciros studio.
+	\end{itemize}}
+\cventry{2008--2010}{Teaching Experiences}{Hamedan University of Technology}{Hamedan, Iran}{}{Detailed achievements:%
+	\begin{itemize}%
+		\item Teaching assistant, B.S. Introduction to Programming, M.Sc. Hassan Bashiri, spring 2008.
+		\item Teaching assistant, B.S. Advanced Programming, M.Sc. Hassan Bashiri, autumn 2008.
+		\item Teaching assistant, B.S. Introduction to Assembly 80x86 Programming, M.Sc. Hatam Abdoli, spring 2009.
+		\item Teaching assistant, B.S. Data Structures, Dr. Mir Hossein Dezfoulian, autumn 2009.
+		\item Teaching assistant, B.S. Operating Systems, Dr. Muharram Mansoorizadeh, spring 2010.\
+		\item Teaching assistant, B.S. Computer Graphics, Dr. Mir Hossein Dezfoulian, autumn 2010.\
+	\end{itemize}}
+
+\section{Honors, Awards, Fellowships}
+\cvlistitem{TUM Scholarship for International Students, Winter 2013-14}
+\cvlistitem{TUM Scholarship for International Students, Summer 2013}
+\cvlistitem{TUM Scholarship for International Students, Summer 2015}
+\cvlistitem{Technical Program Committee (TPC) member of second IEEE AIME workshop that was colocated with the IEEE ICME 2012 in Mellbourne, Australia}
+\cvlistitem{1st Place in Local Hamedan Azad University ACM Programming Contest, Hamedan Azad University, 2010}
+\cvlistitem{1st Place in Local Hamedan University of Technology ACM Programming Contest, Hamedan University of Technology, 2009}
+\cvlistitem{2nd Place in Local Bu-Ali Sina Hamedan University ACM Programming Contest, Bu-Ali Sina University, 2007}
+\cvlistitem{National Organization for Development of Exceptional Talents' student research fellowship for writing a manual on how to make a low-poly mesh, 2005}
+\cvlistitem{National Organization for Development of Exceptional Talents' Student Research Fellowship for Developing a Function Plotter Application, 2005}
+\cvlistitem{Winning the best award for function plotting application in Shahid Beheshti Mathematics Congress, Shahid Beheshti High School in Broujerd, 2004}
 
 \section{Languages}
-\cvitemwithcomment{English}{Skill level}{}
-\cvitemwithcomment{Persian}{Skill level}{}
+\cvitemwithcomment{English}{TOEFL iBT Score(2011): 85 (Reading: 25, Listening: 19, Speaking: 17, Writing: 24)}{}
+\cvitemwithcomment{Persian}{Mother Language}{}
 \cvitemwithcomment{German}{Elementary}{}
 
 \section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+\cvitem{\textbf{Frequently using}}{C/C++, CMake, OpenGL (Recently using \textbf{Vulkan}), OpenCL, GLSL shader programming, Qt}
+\cvitem{\textbf{Familiar with}}{DirectX and HLSL shader programming, CUDA programming, NVIDIA Optix, Intel Embree, DOxygen Commenting, 3D object modeling and animation using 3D Studio Max, Game engines (Ogre, Irrlicht, Unity, UDK), Windows programming, 80x86 Assembly programming, Microsoft Foundation Classes (MFC),  Thrift C++ API, WinSocket Programming, Creating AR content using Metaio SDK, Metaio Creator, and HTML5+Javascript+PHP (not available anymore since Metaio is sold to Apple), Pascal}
+\cvitem{\textbf{Love to use}}{Latex, Git, and Linux}
 
-\section{Interests}
-\cvitem{hobby 1}{Description}
-\cvitem{hobby 2}{Description}
-\cvitem{hobby 3}{Description}
 
-\section{Extra 1}
-\cvlistitem{Item 1}
-\cvlistitem{Item 2}
-\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
-
-\section{Extra 2}
-\cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
-\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
-
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-\end{cvcolumns}
+%\section{References}
+%\begin{cvcolumns}
+%  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+%\end{cvcolumns}
 
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
 
 % Publications from a BibTeX file using the multibib package
 %\section{Publications}
@@ -131,27 +162,7 @@ Detailed achievements:%
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-\date{January 01, 1984}
-\opening{Dear Sir or Madam,}
-\closing{Yours faithfully,}
-\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
-
-Albert Einstein discovered that $e=mc^2$ in 1905.
-
-\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
-
-\makeletterclosing
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
