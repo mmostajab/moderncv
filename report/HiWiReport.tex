@@ -212,20 +212,34 @@ In this project, I mainly focused on implementing two direct result queries on t
 	\label{fig:bspline}
 \end{figure}
 
-\textbf{Other Tasks}.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{./figs/dvr.png}
+	\caption[Direct volume rendering]{\textbf{Direct volume rendering} of ground water flow dataset's simulation from Florida International University. Colors represent the water's velocity at each point.}
+	\label{fig:dvr}
+\end{figure}
+
+\hfill
+
+\textbf{Other Tasks}:
 \begin{itemize}
 	\item Implementing cross-section algorithm for unstructured simulation mesh types (Figure \ref{fig:crossection}).
 	\item Adding very large screenshot capturing feature to RPE (Figure \ref{fig:highres}).
 	\item Evaluating B-Spline on the GPU using tessellation shader (Figure \ref{fig:bspline}).
+	\item Direct volume rendering by implementing a ray marching fragment shader (Figure \ref{fig:dvr}).
 \end{itemize}
 
-\section{Interdisciplinary Project (IDP)}
-
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.90\textwidth]{./figs/idp_overview.png}
-	\caption[B-Spline GPU Tessellation]{\textbf{Evaluating B-Spline on GPU} using a tessellation shader.}
-	\label{fig:bspline}
+	\subfloat[\label{IDP_overview:fig1}]{%
+		\includegraphics[width=0.58\textwidth]{./figs/idp_overview.png}
+	}
+	\hfill
+	\subfloat[\label{IDP_overview:fig2}]{%
+		\includegraphics[width=0.38\textwidth]{./figs/idp_userAssist.png}
+	}
+	\hfill
+	\caption[Factory ray-tracing]{\textbf{3D-Visualization of electromagnetic field strength distribution} overview. The right figure shows how the application assists the user to collect enough data during measurement. For each regular grid's element a bar will appear which its height and color show how much data is collected for that part of the environment. The bars are rendered in transparent to let the user see through them.}
+	\label{fig:IDP_overview}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -241,9 +255,22 @@ In this project, I mainly focused on implementing two direct result queries on t
 		\includegraphics[width=0.3\textwidth]{./figs/idp3.png}
 	}
 	\hfill
-	\caption[Factory ray-tracing]{\textbf{IDP}.}
-	\label{fig:embreeFactory}
+	\caption[Factory ray-tracing]{\textbf{Magnetic field} visualization using different techniques.}
+	\label{fig:IDP_results}
 \end{figure}
  
+ \textbf{Interdisciplinary Project (IDP): 3D-Visualization of electromagnetic field strength distribution}. To activate and detect the passive RFIDs which are passed through a RFID detection gate correctly, a specific range of magnetic field in an area around the gate is expected. The goal of the project is to assist the user to measure magnetic field in a specific area around the gate and visualize the values to detect the areas around the gate that has high/low magnetic field strength. To measure the magnetic field in a specific point, a measurement antenna is used. To keep track of the antenna's position, it is equipped with retro-reflective markers. The gate is surrounded with four ART-trackers which track the marker positions (Figure \ref{IDP_overview:fig1}). The user is able to work with the system through a remote controller. Using a separate marker, the user defines the gate dimension and position, antenna positions to initialize the 3D world. The user uses the same marker to define the area of interest for measurement to the application. During the measurement, application helps the user to collect enough data to make the measurements accurate (Figure \ref{IDP_overview:fig2}). When the data is collected, the user is able to visualize the collected data in each direction, and its magnitude using sphere or torus glyphs. Additionally, the collected values can be displayed more clearly by rendering the collected volume of data. Figure \ref{fig:IDP_results} shows some of the achieved results.
+ 
+\textbf{GitHub Page}. My GitHub page can found here:
+ 
+\url{https://github.com/mmostajab}
 
+Some of my main projects are private and cannot be viewed here. It will be my pleasure to add you as contributor to have a look on them, also.  
+  
+ 
+ \textbf{Older Projects} can be found here:
+ 
+ \url{https://sites.google.com/site/mostajabsprojectseportfolio/projects-2}
+ 
+ 
 \end{document}          
