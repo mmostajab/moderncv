@@ -24,7 +24,7 @@
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-\name{Seyedmorteza}{Mostajabodaveh}
+\name{Morteza}{Mostajab}
 %\title{}                               % optional, remove / comment the line if not wanted
 \address{Kasinostr. 24}{64293 Darmstadt}{Germany}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+49~(170)~548~5750}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
@@ -55,7 +55,7 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2012--Present}{Master candidate in computer science}{Technische Universit\"at M\"unchen}{Munich}{}{Specialization: Computer graphics and visualization}  % arguments 3 to 6 can be left empty
+\cventry{2012--2016}{Master of computer science}{Technische Universit\"at M\"unchen}{Munich}{}{Specialization: Computer graphics and visualization}  % arguments 3 to 6 can be left empty
 \cventry{2006--2011}{Bacholer of computer engineering}{Hamedan University of Technology}{Hamedan, Iran}{Grade: \textit{15.04} out of 20.0}{Major: Computer hardware engineering}
 \cventry{2005--2006}{Pre-university}{National Organization for Development of Exceptional Talents' Shahid Beheshti School}{Borujerd, Iran}{}{Major: Mathematics and physics}
 \cventry{2002--2005}{High school}{National Organization for Development of Exceptional Talents' Shahid Beheshti School}{Borujerd, Iran}{}{Major: Mathematics and physics}
@@ -70,12 +70,20 @@
 \cvitem{title}{\emph{Real-time streamsurface computation and rendering}}
 \cvitem{supervisors}{Prof.Dr. Westermann}
 \cvitem{advisors}{Dr. Andreas Dietrich, Dr. Frank Michel}
-\cvitem{abstract}{Streamsurfaces are one of the powerful visualization tools, which are used to gain insight into characteristics and features of flow fields. In practice, streamsurfaces are approximated by triangulating adjacent pairs of integral curves, originating from a seeding line. The generation of integral curves bears quite some similarities to ray tracing algorithms used in physically based renderers. Although, the techniques used in ray tracing may not have good performance in the streamline computation context due to their different computational nature, they can be optimized for streamline computation by introducing some modifications. In this master thesis, I present my work on accurate streamsurface computation and rendering in real-time, by exploiting the scalability and portability features of parallel architectures in heterogeneous computing, and utilizing concepts from physically based rendering. To improve the efficiency, I use a scheduler to divide the streamsurface computation and rendering tasks on different devices proportional to their computation powers. Additionally, I apply and evaluate different acceleration structures and the concepts of caching to improve the efficiency and utilization of streamsurface generation on modern GPUs and CPUs to achieve real-time results. Furthermore, the possible impact of applying ray-packing and ray-sorting to the streamline computation is investigated.}
+%\cvitem{abstract}{Streamsurfaces are one of the powerful visualization tools, which are used to gain insight into characteristics and features of flow fields. In practice, streamsurfaces are approximated by triangulating adjacent pairs of integral curves, originating from a seeding line. The generation of integral curves bears quite some similarities to ray tracing algorithms used in physically based renderers. Although, the techniques used in ray tracing may not have good performance in the streamline computation context due to their different computational nature, they can be optimized for streamline computation by introducing some modifications. In this master thesis, I present my work on accurate streamsurface computation and rendering in real-time, by exploiting the scalability and portability features of parallel architectures in heterogeneous computing, and utilizing concepts from physically based rendering. To improve the efficiency, I use a scheduler to divide the streamsurface computation and rendering tasks on different devices proportional to their computation powers. Additionally, I apply and evaluate different acceleration structures and the concepts of caching to improve the efficiency and utilization of streamsurface generation on modern GPUs and CPUs to achieve real-time results. Furthermore, the possible impact of applying ray-packing and ray-sorting to the streamline computation is investigated.}
 
 \section{Bachelor thesis}
 \cvitem{title}{\emph{Incorporating affective states of players in video games}}
 \cvitem{supervisor}{Dr. Muharram Mansoorizadeh}
-\cvitem{abstract}{Video games are very popular, these days. They use different ways to interact with users. Keyboards, mouse, Joysticks, and recently camera are among the popular interaction devices. While technology involved in game industry develops new interactive devices to get user's interactions that capture lots of player's inputs, the games just use player's voluntary interactions. However, spontaneous behaviors of players are of much value in playing games, the players do not use involuntary interactions. Among several available representations for affects, two-dimensional continuous Activation/Evaluation(Valence) space has been adopted. We can determine the player's preferences in the environment by comparing his or her playing to the player's valence and activity in real-time. These information can be used to modify the game rules and environment to make it more attractive for players and create a unique experience during each gameplay session. (Score:20/20).}
+%\cvitem{abstract}{Video games are very popular, these days. They use different ways to interact with users. Keyboards, mouse, Joysticks, and recently camera are among the popular interaction devices. While technology involved in game industry develops new interactive devices to get user's interactions that capture lots of player's inputs, the games just use player's voluntary interactions. However, spontaneous behaviors of players are of much value in playing games, the players do not use involuntary interactions. Among several available representations for affects, two-dimensional continuous Activation/Evaluation(Valence) space has been adopted. We can determine the player's preferences in the environment by comparing his or her playing to the player's valence and activity in real-time. These information can be used to modify the game rules and environment to make it more attractive for players and create a unique experience during each gameplay session. (Score:20/20).}
+
+\section{Employment}
+
+\cventry{2016--Present}{Researcher}{Fraunhofer IGD}{Darmstadt}{}{Computer graphics research and developments. \newline{} %
+Projects:%
+         \begin{itemize}
+	\item VELaSSco (Visualization For Extremely Large-Scale Scientific Computing) EC project development (\href{htpp://www.velassco.eu}{VELaSSco.eu}). 
+         \end{itemize}}
 
 \section{Experience}
 \subsection{Vocational}
@@ -90,8 +98,9 @@ Detailed achievements:%
 	\begin{itemize}%
 		\item Working on 3D-Visualization of electromagnetic field strength distribution.
 	\end{itemize}}
-\cventry{2013--2014}{Guided Research}{TUM's Prof. Westermann's chair (Computer Graphics and Visualization)}{Garching bei M\"unchen}{}{Abstract:%
-	Ray-traced global illumination (GI) algorithms are becoming widespread in real-time applications and computer video games. Path tracing is a common rendering technique to render images with global illumination effect. Low performance of these algorithms, makes their usage limited. To speed up these algorithms, some acceleration hi- erarchy like kd-tree, BSP-tree, etc. is used. Typically, BVH-Trees are used to accelerate path-tracing algorithms. Recently, these algorithms are run in real time on CPUs and GPUs but the ray coherency after the first bounce becomes too low; As mentioned by related works. As CPUs and GPUs use wide SIMD units, gaining high coherency on these units is very important. A coherency improvement mechanism can be used to restore the ray coherency. In this paper we are going to investigate the impact of ray sorting on execution coherency of processor’s SIMD units. Our measurements show that execution coherency is increased by sorting the secondary rays but the improvements in coherency values are not as much as we expected and was presented by other papers. The scenes which are rendered in our approach are voxelized and stored in Boundary Volume Hierarchy (BVH) acceleration hierarchy. Furthermore, the voxel-based path-tracer is used as global illumination technique.}
+\cventry{2013--2014}{Guided Research}{TUM's Prof. Westermann's chair (Computer Graphics and Visualization)}{Garching bei M\"unchen}{}{\textbf{Topic:} Measuring and Evaluating Impact of Ray Sorting Algorithms on Coherency of SIMDs in Voxel-Based Path Tracers}
+%{}{Abstract:%
+%	Ray-traced global illumination (GI) algorithms are becoming widespread in real-time applications and computer video games. Path tracing is a common rendering technique to render images with global illumination effect. Low performance of these algorithms, makes their usage limited. To speed up these algorithms, some acceleration hi- erarchy like kd-tree, BSP-tree, etc. is used. Typically, BVH-Trees are used to accelerate path-tracing algorithms. Recently, these algorithms are run in real time on CPUs and GPUs but the ray coherency after the first bounce becomes too low; As CPUs and GPUs use wide SIMD units, gaining high coherency on these units is very important. A coherency improvement mechanism can be used to restore the ray coherency. In this paper we are going to investigate the impact of ray sorting on execution coherency of processor’s SIMD units. Our measurements show that execution coherency is increased by sorting the secondary rays but the improvements in coherency values are not as much as we expected and was presented by other papers. The scenes which are rendered in our approach are voxelized and stored in Boundary Volume Hierarchy (BVH) acceleration hierarchy. Furthermore, the voxel-based path-tracer is used as global illumination technique.}
 \cventry{2013--2014}{Research Assistant}{TUM's Prof. Navab's chair (Computer Aided and Medical Procedures \& Augmented Reality)}{Garching bei M\"unchen}{}{Detailed achievements:%
 	\begin{itemize}%
 		\item Working on OpenGL debugging tools.
@@ -134,9 +143,9 @@ Detailed achievements:%
 \cvitemwithcomment{German}{Elementary}{}
 
 \section{Computer skills}
-\cvitem{\textbf{Frequently using}}{C/C++, CMake, OpenGL, Vulkan, OpenCL, GLSL shader programming, Qt}
-\cvitem{\textbf{Familiar with}}{DirectX and HLSL shader programming, CUDA programming, NVIDIA Optix, Intel Embree, DOxygen Commenting, 3D object modeling and animation using 3D Studio Max, Game engines (Ogre, Irrlicht, Unity, UDK), Windows programming, 80x86 Assembly programming, Microsoft Foundation Classes (MFC),  Thrift C++ API, WinSocket Programming, Creating AR content using Metaio SDK, Metaio Creator, and HTML5+Javascript+PHP (not available anymore since Metaio is sold to Apple), Pascal}
+\cvitem{\textbf{Advanced in using}}{C/C++, CMake, OpenGL, Vulkan, OpenCL, GLSL shader programming, Qt, \textbf{Ray tracing libraries} (NVIDIA Optix, Intel Embree)}
 \cvitem{\textbf{Love to use}}{Latex, Git, and Linux}
+\cvitem{\textbf{Have used}}{DirectX and HLSL shader programming, CUDA programming, DOxygen Commenting, 3D object modeling and animation using 3D Studio Max, Game engines (Ogre, Irrlicht, Unity, UDK), Windows programming, 80x86 Assembly programming, Microsoft Foundation Classes (MFC),  Thrift C++ API, WinSocket Programming, Creating AR content using Metaio SDK, Metaio Creator, and HTML5+Javascript+PHP (not available anymore since Metaio is sold to Apple), Pascal}
 
 
 %\section{References}
