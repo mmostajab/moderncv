@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{marvosym}
+\usepackage{parskip}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}\fi
+
+\pagestyle{empty}
+
+\usepackage[scale=0.8]{geometry}
+\setlength{\parindent}{5pt}
+\addtolength{\parskip}{15pt}
+\def\firstname{Seyedmorteza}
+\def\familyname{Mostajabodaveh}
+\def\FileAuthor{\firstname \familyname}
+\def\FileTitle{\firstname \familyname's cover letter}
+\def\FileSubject{Cover letter}
+\def\FileKeyWords{\firstname \familyname, Cover letter}
+
+\usepackage{url}
+\renewcommand{\ttdefault}{pcr}
+\urlstyle{tt}
+\ifpdf
+  \usepackage[pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1]{hyperref}
+  \hypersetup{
+    pdfauthor   = \FileAuthor,%
+    pdftitle    = \FileTitle,%
+    pdfsubject  = \FileSubject,%
+    pdfkeywords = \FileKeyWords,%
+    pdfcreator  = \LaTeX,%
+    pdfproducer = \LaTeX}
+\else
+  \usepackage[dvips]{hyperref}
+\fi
+
+\renewcommand{\familydefault}{\sfdefault}% for use with a résumé using sans serif fonts;
+%\renewcommand{\familydefault}{\rmdefault}% for use with a résumé using sans serif fonts;
+
+\begin{document}
+\hfill%
+\begin{minipage}[t]{.6\textwidth}
+\raggedleft%
+\vspace{20 mm}
+{\bfseries Amin Abouee Mehrizi}\\[.35ex]
+\small\itshape%
+Admiralbogen 45, App 1.120\\
+80939, Munich, Germany\\
+\Telefon~phone 0176 803 80757\\
+\Letter~ Amin.Abouee.Mehrizi@in.tum.de\\
+\end{minipage}\\[1em]
+%
+\begin{minipage}[t]{.4\textwidth}
+\raggedright%
+\vspace{15 mm}
+% \textbf{Prof. Dr. Didier Stricker}\\
+\small\itshape%
+Prof. Dr.-Ing. Philipp Slusallek\\
+Saarland University\\
+Computer Graphics Lab \&\\
+Intel Visual Computing Institute\\
+Saarland Informatics Campus, E 1 1\\
+66123 Saarbr{\"u}cken\\
+Germany\\[0.5em]
+\end{minipage}
+\hfill % US style
+%\\[1em] % UK style
+\begin{minipage}[t]{.4\textwidth}
+\raggedleft % US style
+% May 2, 2011 % US informal style
+% 21 May 2015 % UK formal style
+\today
+\end{minipage}\\[3em]
+% \raggedright
+% Dear W-Support Team \\
+\begin{description}
+\textbf{Subject: letter of Interest}\\[1.0em]
+Dear Prof. Philipp ,\\
+I am very excited about the possibility of joining the Visual Inference group of TU Darmstad for the position of PhD candidate researching, in the fields of Stereo Matching, Optical Flow and Visual SLAM. I respectfully submit this letter of application, as I believe my educational background, strong interest, and diligence will make me a competitive researcher in your group. I would be honored to work with one of the best groups in the field of computer vision in Germany.\\[.6em]
+\end{description}
+
+Sincerely,\\
+Seyedmorteza Mostajabodaveh
+ \end{document}

@@ -111,12 +111,19 @@ by Morteza Mostajab, Andreas Dietrich, Thomas Gierlinger, Frank Michel, Andre St
 	\item Involving into VELaSSCo EC project development.
 	\item Higher-order primitive ray tracer implemented in Intel Embree and NVIDIA OptiX.
 	\item Virtual reality development with LEAP Motion and Oculus SDK.
+	\item Scientific visualization related: cross section of a simulation mesh, and streamline computation.
+	\item Rendering related: software polygon rasterizer, very large OpenGL screenshot capturing component.
 	\end{itemize}}
 \cventry{2014--2014}{Student researcher and developer}{TUM's TUM's Foerdertechnik Materialfluss Logistik (FML) group}{Garching bei M\"unchen}{}{
 	\begin{itemize}%
 		\item Working on 3D visualization of electromagnetic field strength distribution.
 	\end{itemize}}
-\cventry{2013--2014}{Guided Research}{TUM's Prof. Westermann's chair (Computer Graphics and Visualization)}{Garching bei M\"unchen}{}{\textbf{Topic:} Measuring and Evaluating Impact of Ray Sorting Algorithms on Coherency of SIMDs in Voxel-Based Path Tracers}
+\cventry{2013--2014}{Guided Research}{TUM's Prof. Westermann's chair (Computer Graphics and Visualization)}{Garching bei M\"unchen}{}{\textbf{Topic:} Measuring and Evaluating Impact of Ray Sorting Algorithms on Coherency of SIMDs in Voxel-Based Path Tracers.\newline
+	Content:
+		\begin{itemize}%
+			\item Implementing a single-threaded voxel-based path-tracer.
+			\item Instrumentalize path tracer with a SIMD simulator to analyze instruction and data coherency on different processors.
+		\end{itemize}}
 %{}{Abstract:%
 %	Ray-traced global illumination (GI) algorithms are becoming widespread in real-time applications and computer video games. Path tracing is a common rendering technique to render images with global illumination effect. Low performance of these algorithms, makes their usage limited. To speed up these algorithms, some acceleration hi- erarchy like kd-tree, BSP-tree, etc. is used. Typically, BVH-Trees are used to accelerate path-tracing algorithms. Recently, these algorithms are run in real time on CPUs and GPUs but the ray coherency after the first bounce becomes too low; As CPUs and GPUs use wide SIMD units, gaining high coherency on these units is very important. A coherency improvement mechanism can be used to restore the ray coherency. In this paper we are going to investigate the impact of ray sorting on execution coherency of processor’s SIMD units. Our measurements show that execution coherency is increased by sorting the secondary rays but the improvements in coherency values are not as much as we expected and was presented by other papers. The scenes which are rendered in our approach are voxelized and stored in Boundary Volume Hierarchy (BVH) acceleration hierarchy. Furthermore, the voxel-based path-tracer is used as global illumination technique.}
 \cventry{2013--2014}{Student researcher and developer}{TUM's Prof. Navab's chair (Computer Aided and Medical Procedures \& Augmented Reality)}{Garching bei M\"unchen}{}{
@@ -134,13 +141,15 @@ by Morteza Mostajab, Andreas Dietrich, Thomas Gierlinger, Frank Michel, Andre St
 		\item 3D content creation and adjustments for mobile AR scenarios using 3D Studio Max.
 	\end{itemize}}
 \cventry{2012--2013}{Practical Course}{TUM's Prof. Westermann's chair (computer graphics and visualization)}{Garching bei M\"unchen}{}{\textbf{Topic}:%
-	Interactive Visual Data Analysis using Direct3D 11 and C++.}
+	Interactive Visual Data Analysis using Direct3D 11 and C++.\newline
+	Content:
+	\begin{itemize}%
+		\item Implementing rendering technqiues to extract iso-surface, do direct volume rendering, GPU particle tracing and rendering, GPU streamline computation and rendering, and etc.
+	\end{itemize}}
 \cventry{2012--2012}{Student researcher and developer}{Fortiss GmbH}{M\"unchen}{}{
 	\begin{itemize}%
 		\item Implementing an interface using windows message passing API to update the automotive system visualization in Ciros studio.
 	\end{itemize}}
-
-\newpage{}
 
 \section{Teaching}
 
