@@ -76,23 +76,23 @@
 
 \begin{frame}{About Me...}
 	\begin{tikzpicture}[overlay, remember picture]
-		\node[anchor=north east, xshift=-40pt,yshift=-55pt]
+		\node[anchor=north east, xshift=-30pt,yshift=-55pt]
 		at(current page.north east){
-			\includegraphics[width=30mm]{figures/FirstPC.png}
+			\includegraphics[width=30mm]{figures/photo.jpg}
 		};
 	\end{tikzpicture}
 
 	\begin{itemize}
-		\item My name is \textbf{Morteza Mostajab}
-		\item Bachelor studies:\\ Hamedan University of Technology, Iran
-		\item Maseter studies:\\ Technische Universit{\"a}t M{\"unchen}
-		\item Present:\\ Researcher at Fraunhofer IGD, Darmstadt
+		\item My name is \textbf{Morteza Mostajab} \cite{Barringer:2014:DRS:2601097.2601222} \cite{pgs.20141257}
+		\item Bachelor studies:\\ \textit{Hamedan University of Technology, Iran}
+		\item Maseter studies:\\ \textit{Technische Universit{\"a}t M{\"unchen}}
+		\item Present:\\ \textit{Researcher at Fraunhofer IGD, Darmstadt}
 		\item Research interests:\\
-		    Real-time physically-based rendering \\
-		    (Rasterization-based or Ray-tracing)\\
-			Virtual reality\\
-			Computer graphics and visualization\\
-			Game Programming
+		    \textit{Real-time physically-based rendering} \\
+			\textit{(Rasterization-based or Ray-tracing)}\\
+			\textit{Virtual reality}\\
+			\textit{Computer graphics and visualization}\\
+			\textit{Game Programming}
 		   
 	\end{itemize}
 \end{frame}
@@ -103,24 +103,33 @@
 		\item Games, Animations, Movies with Special Effects,...
 			\begin{figure}
 			\centering
-			\subfigure[Lion King]{
-				\includegraphics[width=0.22\linewidth]{figures/Inspiration1.png}
+			\subfigure[Last Ninja 3]{
+				\includegraphics[width=0.19\linewidth]{figures/LastNinja.png}
 			}
-			\subfigure[caption]{
-				\includegraphics[width=0.22\linewidth]{figures/Inspiration1.png}
+			%\subfigure[Warcraft 2]{
+			%	\includegraphics[width=0.2\linewidth]{figures/warcraft2.jpg}
+			%}
+			\subfigure[Gears of War]{
+				\includegraphics[width=0.21\linewidth]{figures/geow.jpg}
 			}
+			\subfigure[Ratatouille]{
+				\includegraphics[width=0.20\linewidth]{figures/Ratatouille.jpg}
+			}
+			\subfigure[The lord of the rings]{
+				\includegraphics[width=0.29\linewidth]{figures/lotr.jpg}
+			}		
 		\end{figure}
 	  \item My firsts...
 		  \begin{figure}
 			\centering
 			\subfigure[First Computer]{
-				\includegraphics[height=0.2\textheight]{figures/FirstComputer.png}
+				\includegraphics[height=0.2\textheight]{figures/commodore.jpg}
 			}
-			\subfigure[First PC]{
-				\includegraphics[height=0.2\textheight]{figures/FirstPC.png}
+			\subfigure[First IBM compatiable PC]{
+				\includegraphics[height=0.2\textheight]{figures/PC286.jpg}
 			}
-			\subfigure[First Console]{
-				\includegraphics[height=0.2\textheight]{figures/FirstConsole.png}
+			\subfigure[First Console (Atari 2600)]{
+				\includegraphics[height=0.15\textheight]{figures/atari2600.jpg}
 			}
        	  \end{figure} 
 	\end{itemize}
@@ -130,44 +139,18 @@
 
 \section{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
 
-
-\begin{frame}{Inspiration}
+\begin{frame}{Higher order primitives}
 	
-	\begin{itemize}
-		\item In these slides we show how Overleaf can be used with standard chemistry packages to easily create professional presentations.
-		\item If you're new to \LaTeX{}, check out this free introductory course by Overleaf founder Dr John Lees-Miller: \url{www.overleaf.com/blog/7}
-		\item You can also find more quick tips and tricks on the help pages at \url{www.overleaf.com/help}
-	\end{itemize}
-
-% Example from Chemfig documentation - Fischer indole synthesis:
-% www.tex.ac.uk/ctan/macros/generic/chemfig/chemfig_doc_en.pdf
-\begin{center}\small\setatomsep{1.5em}
-\schemestart
-  \chemfig{*6(=-*6(-\chembelow{N}{H}-NH_2)=-=-)}
-  \+
-  \chemfig{(=[:-150]O)(-[:-30]R_2)-[2]-[:150]R_1}
-  \arrow(.mid east--.mid west){->[\chemfig{H^+}]}
-  \chemfig{*6(-=*5(-\chembelow{N}{H}-(-R_2)=(-R_1)-)-=-=)}
-\schemestop
-\end{center}
-
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=0.9\linewidth]{figures/hops.png}
+	\end{figure}
 \end{frame}
 
-\subsection{The chemistry packages}
-\begin{frame}{The chemistry packages}
-
-We focus on two \LaTeX{} chemistry packages:
-\begin{block}{The \texttt{chemfig} package}
-This package provides the command which draws molecules. Created by Christian Tellechea, a detailed user guide can be found here:\\[0.4cm]
-\small{\url{www.tex.ac.uk/ctan/macros/generic/chemfig/chemfig_doc_en.pdf}}
-\end{block}
-\begin{block}{The \texttt{mhchem} package}
-The \texttt{mhchem} package provides simple commands for typesetting chemical molecular formulae and equations. Created by Martin Hensel, a detailed user guide can be found here:\\[0.4cm]
-\small{\url{http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/mhchem/mhchem.pdf}}
-\end{block}
-% The LaTeX wikibook is also a good source of info, e.g.
-% http://en.wikibooks.org/wiki/LaTeX/Chemical_Graphics
-
+\begin{frame}[allowframebreaks]
+	\frametitle{References}
+	\bibliographystyle{amsalpha}
+	\bibliography{bibliography}
 \end{frame}
 
 \end{document}
