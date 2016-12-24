@@ -135,11 +135,95 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
 \section{Master Thesis}
+
+\begin{frame}{Motivation}
+	\begin{itemize}
+		\item \textbf{Goal}: Use virtual reality to help engineers getting a better \textbf{understanding} of simulations, make \textbf{investigation} in flow field features easier.
+		\item Virtual reality applications demands 75-140 frames per second scene update and rendering to reduce \textbf{latency}.
+		\item \textbf{Initial motivation}:\\
+		  -- \textbf{Immersive Streamline Demo}: a demo which user could stand in a simulation model to understand flow field features by:
+		  \begin{itemize}
+		  	\item Prototype demo which placed the user virtually in simulation model.
+		  	\item User could interact with virtual world by moving streamlines' seeding plane.
+		  	\item User could walk around in the simulation model, look closer into streamlines to understand flow field's features better.
+		  \end{itemize} 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Immersive Streamline Demo}
+
+	\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{./figures/vr.png}
+	\caption{\textbf{Immersive Streamlines} was a prototype demo done at Fraunhofer IGD. The user is able to move inside the virtual world, interact with it, and look closely at the flow visualization results. The image shows a stereo pair, which is displayed on Oculus Rift HMD. }
+	\label{fig:vr_irpv}
+	
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Problem Definition}
+	\begin{itemize}
+		\item Streamline's computation was 10 frames per second (latency was very visible to user).
+		\item Streamline's accuracy was not high enough (straight lines in streamlines are visible in the screenshot).
+		\item Stream surfaces can provide more information about flow fields features.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Main Contributions}
+	\begin{itemize}
+		\item Investigation techniques from ray tracing field for application in streamline computation:\\
+		  -- Using acceleration structures\\
+		  -- Using ray-packing\\
+		\item Using heterogeneous computing:\\
+		  -- Scale streamline computation on all capable devices.\\
+		  -- Scale rendering on all graphic processing units.\\
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Related Works}
+	\begin{itemize}
+		\item Parallel stream surface computation for large data sets \cite{CampPaper}.\\
+		proposed a distributed stream surface computation system.\\
+		-- \textbf{My method is not distributed but uses all available computation devices.}
+		\item Interactive Streak Surface Visualization on the GPU \cite{BurgerStreakSurface}.\\
+		Bue+09 samples the simulation mesh on a regular grid, then compute the streak surface.\\
+		-- \textbf{Reduces accuracy, ignores a lot of information exist in simulation mesh by sampling it on a regular grid.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Related Works}
+	\begin{itemize}
+		\item Interactive particle tracing for the exploration of flow fields in virtual environments \cite{Schirski:50085}.\\
+		Sch08 uses the neighboring graph instead of acceleration
+		structure on GPU.\\
+		-- \textbf{step size needed to be small enough.}
+		\item Fast, Memory-Efficient Cell Location in Unstructured Grids for
+		Visualization \cite{GarthPaper}.\\
+		introduces cell-tree acceleration structure use it for
+		particle tracing.\\
+		-- \textbf{I have evaluated more acceleration structures to classify them based on memory requirements and performance.}
+	\end{itemize}
+\end{frame}
+
+%================================================
+%================================================
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+%================================================
+%================================================
 
 \section{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
 
-\begin{frame}{Higher order primitives}
+\begin{frame}{Supported Higher order primitives}
 	
 	\begin{figure}[ht!]
 		\centering
@@ -151,6 +235,18 @@
 	\frametitle{References}
 	\bibliographystyle{amsalpha}
 	\bibliography{bibliography}
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{Voxel based path tracing}
+
+\begin{frame}
+	\begin{itemize}
+		\item gsfdgfsd
+	\end{itemize}
 \end{frame}
 
 \end{document}
