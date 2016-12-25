@@ -53,6 +53,7 @@
 
 %==================================
 \usepackage{subfigure}
+\usepackage[]{algorithm2e}
 %==================================
 
 % Here's where the presentation starts, with the info for the title slide
@@ -83,7 +84,7 @@
 	\end{tikzpicture}
 
 	\begin{itemize}
-		\item My name is \textbf{Morteza Mostajab} \cite{Barringer:2014:DRS:2601097.2601222} \cite{pgs.20141257}
+		\item My name is \textbf{Morteza Mostajab}
 		\item Bachelor studies:\\ \textit{Hamedan University of Technology, Iran}
 		\item Maseter studies:\\ \textit{Technische Universit{\"a}t M{\"unchen}}
 		\item Present:\\ \textit{Researcher at Fraunhofer IGD, Darmstadt}
@@ -171,19 +172,31 @@
 		\item Streamline's computation was 10 frames per second (latency was very visible to user).
 		\item Streamline's accuracy was not high enough (straight lines in streamlines are visible in the screenshot).
 		\item Stream surfaces can provide more information about flow fields features.
+		\item So, we defined \textbf{Parallel Stream Surface Computation and Rendering} master thesis to solve these problems.		
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Main Contributions}
 	\begin{itemize}
-		\item Investigation techniques from ray tracing field for application in streamline computation:\\
+		\item Investigation techniques from ray tracing field for application in accurate streamline computation:\\
 		  -- Using acceleration structures\\
 		  -- Using ray-packing\\
 		\item Using heterogeneous computing:\\
 		  -- Scale streamline computation on all capable devices.\\
 		  -- Scale rendering on all graphic processing units.\\
 	\end{itemize}
+\end{frame}
 
+\begin{frame}{Benefits}
+	
+	\begin{itemize}
+		\item Accurate streamline computation method (using \textbf{Runge-Kutta} integration method).
+		\item \textbf{Adaptive Runge-Kutta} integration method to adapt steps to maximum integration error.
+		\item Heterogeneous stream surface computation.
+		\item Multi GPU stream surface computation and result 
+	\end{itemize}
+	\textbf{}
+	
 \end{frame}
 
 \begin{frame}{Related Works}
@@ -208,6 +221,118 @@
 		introduces cell-tree acceleration structure use it for
 		particle tracing.\\
 		-- \textbf{I have evaluated more acceleration structures to classify them based on memory requirements and performance.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Stream Surface Computation Algorithm \cite{CampPaper}}
+	\begin{algorithm}[H]
+		\KwData{$seeds$ list which contains all initial seeding points.}
+		\KwResult{Stream Surface Points}
+
+		\While{$seeds$ list is not empty}{
+			
+			\textbf{Tracing}: Trace streamlines originating from seeding points stored in $seeds$ list.\
+			
+			\textbf{Refinement}:\For{each pair of adjacent streamlines $s_1$ and $s_2$}{
+		$d \gets$ \textit{Distance}($s_1$, $s_2$)\
+		
+				\eIf{$d \leq D_{disc}$ }{
+					\textbf{Discontinuity}: The surface is discontinued in that area.
+				}{
+					$s_{new} \gets (s_1[0] + s_2[0]) / 2$\\			  
+					add $s_{new}$ to list $seeds$.
+				}
+			}
+		}
+		\caption{Stream Surface Computation Algorithm \cite{CampPaper}.}
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}{Accurate Streamline Computation}
+	\begin{itemize}
+		\item Point-Inside-Cell checks \& interpolating results inside cells.
+		\item Using \textit{adaptive Runge-Kutta} integration method (Cash-Karp).
+		\item Adaptive stepping (faster and more accurate integration).
+		\item Avoiding early terminations.
+	\end{itemize}
+    \begin{figure}
+    	\centering
+    	\subfigure[Euler]{
+    		\includegraphics[width=0.4\linewidth]{figures/euler}
+    	}
+    	\subfigure[Cash-Karp]{
+    		\includegraphics[width=0.4\linewidth]{figures/cashkarp}
+    	}
+	    \caption{Euler and Runge-Kutta integration methods in a perfect rotation around center which are integrated with the same step size.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Refinement Strategy Results}
+	\begin{figure}
+		\centering
+		\subfigure[No Refinements]{
+			\includegraphics[width=0.3\linewidth]{figures/euler}
+		}
+		\subfigure[The first refinement iteration]{
+			\includegraphics[width=0.3\linewidth]{figures/cashkarp}
+		}
+		\subfigure[The second refinement iteration]{
+			\includegraphics[width=0.3\linewidth]{figures/cashkarp}
+		}
+		\caption{The result streamlines making skeleton of stream surface after 2 steps refinement.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Heterogeneous computing model}
+	What was in my thesis.
+\end{frame}
+
+\begin{frame}{Static Distribution of Seeding Points}
+	What was in my thesis.
+\end{frame}
+
+\begin{frame}{Dynamic Distribution of Seeding Points}
+	What will be implemented in holidays 2016.
+\end{frame}
+
+\begin{frame}{Heterogeneous computing results}
+	What I will measure.
+\end{frame}
+
+\begin{frame}{Acceleration Structures}
+	\begin{itemize}
+		\item Grid
+		\item Kd-tree
+		\item Bounding Volume Hierarchy (BVH)
+		\item Cell-tree \cite{GarthPaper}
+	\end{itemize}
+
+	\begin{figure}[!ht]
+		\centering
+		
+		
+		\caption{method}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}{Why Acceleration Structures?}
+	\begin{itemize}
+		\item Accelerating cell look up for faster streamline computation.
+		\item Ray tracing uses acceleration structures to find \textbf{nearest intersection point} in contrast to streamline computation which uses it to \textbf{sample result in a specific point}.
+		\item Differences:
+		    \begin{itemize}
+		    	\item In streamline computation instead of \textit{Surface Area} Heuristics, textit{Volume} Heuristics should be used.
+		    	\item \textit{Traversal algorithms} for space partitioning cases does not need \textit{stack}.
+		    	\item Hierarchy traversal algorithms need a greedy method to prefer one child to other one during traversal.
+		    \end{itemize}
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Acceleration Structures Comparison Results}
+	\begin{itemize}
+		\item The origin...
 	\end{itemize}
 \end{frame}
 
