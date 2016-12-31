@@ -54,10 +54,19 @@
 %==================================
 \usepackage{subfigure}
 \usepackage[]{algorithm2e}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+
+% \REDCOMMENT{text}
+\newcommand{\REDCOMMENT}[1]{\color{red}{#1}\color{black}}
+
+% \BLUECOMMENT{text}
+\newcommand{\BLUECOMMENT}[1]{\color{blue}{#1}\color{black}}
+
 %==================================
 
 % Here's where the presentation starts, with the info for the title slide
-\title[My Computer Graphics Background]{A short presentation on my background in computer graphics}
+\title[My Computer Graphics Background]{A presentation on my background in computer graphics}
 \author{M. Mostajab}
 \institute{www.mmostajab.com}
 \date{\today}
@@ -339,14 +348,67 @@
 %================================================
 %================================================
 
+\section{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+
 \begin{frame}{Outline}
 	\tableofcontents
 \end{frame}
 
-%================================================
-%================================================
+\begin{frame}{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+	\begin{figure}[ht!]
+		\includegraphics[width=1.0\linewidth]{figures/Plant_Teaser.png}
+		\caption{
+			A complex CAD scene built out of 8,000 individual plant models. In total, the scene consists of more than 100,000,000 non-planar second-order (cylinders, cones, etc.) and forth-order (tori) primitives, ray traced at more than 10~frames per second on 16 CPU
+			cores, including pixel-accurate shadows.
+		}
+	\end{figure}
+\end{frame}
 
-\section{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+\begin{frame}{Benefits}
+	\begin{itemize}
+		\item \textbf{On-the-fly compositing.}\\
+		%
+		-- Boolean set operations are performed on a per-ray basis immediately	during rendering.\\
+		-- No Preprocessing.
+		\item \textbf{Low storage requirement.}\\
+		%
+		-- small set of parameters for each primitive.\\
+		-- No prior triangulation of primitives.
+		-- Holding scenes in memory would be possible without triangulation.
+		\item \textbf{Pixel-accurate higher order surfaces.}\\
+		-- Ray-primitive intersection can be tested directly.
+		-- Usually a quadratic equation which is easy to solve (tori has a quartic equation).\\
+		-- No discretization artifacts are visible.\\
+		-- Surfaces appear perfectly smooth.\\
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Main Contributions}
+	\begin{itemize}
+		\item a method to apply CSG operations in real-time during ray tracing while keeping the memory overhead low.
+		\item Evaluation of the proposed method in comparison to other well-known rasterization-based real-time CSG model rendering techniques(\cite{goldfeather:86:FCSGDPPGS}, and \cite{Stewart02linear-timecsg}).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Optimized Hitpoint Calculation}
+	\begin{algorithm}[H]
+		\BLUECOMMENT {$ray$: current ray hitting a primitive}\\
+		\vspace{0.5mm}
+			\eIf{ entering primitive }
+			{ $delta$ := $+1$; }
+			{ $delta$ := $-1$; }
+
+			\eIf{ positive primitive hit }
+			{ $ray.posDepth$ += delta;  }
+			{ $ray.negDepth$ += delta;  }
+
+			\eIf{ ($ray.posDepth>0$) $\&\&$ ($ray.negDepth<=0$) }
+			{ ReportHit(); \BLUECOMMENT{ // final hit in layer found } }
+			{ ContinueRay($ray$); \BLUECOMMENT{ // still inside a negative medium } }		
+		\caption{RayTraceLayer($ray$)}
+		\label{alg:ray-trace-layer}
+	\end{algorithm}
+\end{frame}
 
 \begin{frame}{Supported Higher order primitives}
 	
@@ -356,22 +418,85 @@
 	\end{figure}
 \end{frame}
 
+\begin{frame}{More Results}	
+	\begin{figure}
+		\centering
+		\subfigure{
+			\includegraphics[width=0.45\linewidth]{figures/Plasma}
+		}
+		\subfigure{
+			\includegraphics[width=0.45\linewidth]{figures/Plasma_Closeup}
+		}\\
+		\subfigure{
+			\includegraphics[width=0.45\linewidth]{figures/Plant_Closeup_1}
+		}
+		\subfigure{
+			\includegraphics[width=0.45\linewidth]{figures/Plant_Closeup_2}
+		}
+	\end{figure}
+\end{frame}
+
+%================================================
+%================================================
+
+\section{Voxel based path tracing}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\begin{frame}{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+	\begin{figure}[ht!]
+		\includegraphics[width=1.0\linewidth]{figures/Plant_Teaser.png}
+		\caption{
+			A complex CAD scene built out of 8,000 individual plant models. In total, the scene consists of more than 100,000,000 non-planar second-order (cylinders, cones, etc.) and forth-order (tori) primitives, ray traced at more than 10~frames per second on 16 CPU
+			cores, including pixel-accurate shadows.
+		}
+	\end{figure}
+\end{frame}
+
+%================================================
+%================================================
+
+\section{Other Projects}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\begin{frame}{Practical Courses}
+\end{frame}
+
+\begin{frame}{Computer Graphics related courses}
+\end{frame}
+
+\begin{frame}{MetaIO}
+\end{frame}
+
+\begin{frame}{Zull Dutch}
+\end{frame}
+
+\begin{frame}{IDP}
+\end{frame}
+
+%================================================
+%================================================
+
+\section{Discussion}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\begin{frame}{What do you want to be known for in next.}
+\end{frame}
+
 \begin{frame}[allowframebreaks]
 	\frametitle{References}
 	\bibliographystyle{amsalpha}
 	\bibliography{bibliography}
 \end{frame}
 
-\begin{frame}{Outline}
-	\tableofcontents
-\end{frame}
-
-\section{Voxel based path tracing}
-
-\begin{frame}
-	\begin{itemize}
-		\item gsfdgfsd
-	\end{itemize}
-\end{frame}
 
 \end{document}
