@@ -68,7 +68,7 @@
 % Here's where the presentation starts, with the info for the title slide
 \title[My Computer Graphics Background]{A presentation on my background in computer graphics}
 \author{M. Mostajab}
-\institute{www.mmostajab.com}
+\institute{\url{www.mmostajab.com}}
 \date{\today}
 
 \begin{document}
@@ -145,11 +145,35 @@
 	\end{itemize}
 \end{frame}
 
+
+\section{Master Thesis: Real-Time Stream Surface Computation and Rendering}
+
 \begin{frame}{Outline}
-	\tableofcontents
+	\tableofcontents[
+	currentsection,currentsubsection,hideothersubsections
+	]
 \end{frame}
 
-\section{Master Thesis}
+\begin{frame}{Real-Time Stream Surface Computation and Rendering}
+	\begin{figure}
+		\centering
+		\subfigure[Wind Tunnel]{
+			\includegraphics[height=0.3\textheight]{figures/thesis_result0}
+		}
+		\subfigure[Car]{
+			\includegraphics[height=0.3\textheight]{figures/thesis_result1}
+		}\\
+		\subfigure[Tethrahedradecal]{
+			\includegraphics[height=0.3\textheight]{figures/thesis_result2}
+		}
+		\subfigure[Telescope]{
+			\includegraphics[height=0.3\textheight]{figures/thesis_result3}
+		}
+		\caption{
+			Final results of this master thesis.
+		}
+	\end{figure}
+\end{frame}
 
 \begin{frame}{Motivation}
 	\begin{itemize}
@@ -240,7 +264,7 @@
 
 		\While{$seeds$ list is not empty}{
 			
-			\textbf{Tracing}: Trace streamlines originating from seeding points stored in $seeds$ list.\
+			\textbf{Tracing}: Trace streamlines originating from seeding points stored in $seeds$ list and make $seeds$ empty.\
 			
 			\textbf{Refinement}:\For{each pair of adjacent streamlines $s_1$ and $s_2$}{
 		$d \gets$ \textit{Distance}($s_1$, $s_2$)\
@@ -280,49 +304,131 @@
 	\begin{figure}
 		\centering
 		\subfigure[No Refinements]{
-			\includegraphics[width=0.3\linewidth]{figures/euler}
+			\includegraphics[width=0.3\linewidth]{figures/Refinement_0}
 		}
 		\subfigure[The first refinement iteration]{
-			\includegraphics[width=0.3\linewidth]{figures/cashkarp}
+			\includegraphics[width=0.3\linewidth]{figures/Refinement_1}
 		}
 		\subfigure[The second refinement iteration]{
-			\includegraphics[width=0.3\linewidth]{figures/cashkarp}
+			\includegraphics[width=0.3\linewidth]{figures/Refinement_2}
 		}
 		\caption{The result streamlines making skeleton of stream surface after 2 steps refinement.}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous computing model}
-	What was in my thesis.
+\begin{frame}{Heterogeneous Computing Model (1/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch1.PNG}
+	\end{figure}
 \end{frame}
 
-\begin{frame}{Static Distribution of Seeding Points}
-	What was in my thesis.
+\begin{frame}{Heterogeneous Computing Model (2/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch2.PNG}
+	\end{figure}
 \end{frame}
 
-\begin{frame}{Dynamic Distribution of Seeding Points}
-	What will be implemented in holidays 2016.
+\begin{frame}{Heterogeneous Computing Model (3/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch3.PNG}
+	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous computing results}
-	What I will measure.
+\begin{frame}{Heterogeneous Computing Model (4/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch4.PNG}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Heterogeneous Computing Model (5/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch5.PNG}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Heterogeneous Computing Model (6/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch6.PNG}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Heterogeneous Computing Model (7/7)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/MAarch7.PNG}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Multi GPU Rendering}
+	\begin{itemize}
+		\item Compositing screen cpace ambient occlusion results
+		\begin{figure}
+			\centering
+			\subfigure[GPU \#0]{
+				\includegraphics[height=0.25\textheight]{figures/SSAO_GPU0}
+			}
+			\subfigure[GPU \#1]{
+				\includegraphics[height=0.25\textheight]{figures/SSAO_GPU1}
+			}
+			\subfigure[Composited]{
+				\includegraphics[height=0.25\textheight]{figures/SSAO_Combined}
+			}
+		\end{figure}
+	
+		\item Compositing order independence transparency results
+		\begin{figure}
+			\centering
+			\subfigure[GPU \#0]{
+				\includegraphics[height=0.25\textheight]{figures/OIT_GPU0}
+			}
+			\subfigure[GPU \#1]{
+				\includegraphics[height=0.25\textheight]{figures/OIT_GPU1}
+			}
+			\subfigure[Composited]{
+				\includegraphics[height=0.25\textheight]{figures/OIT_Composited}
+			}
+		\end{figure}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Heterogeneous Computing Results}
+	\begin{itemize}
+		\item Measured parameters:
+		\begin{itemize}
+			\item \textbf{Computations per second}: It shows how many times the stream surface can be computed in every second. The unit is number of computation times per second.
+			\item \textbf{Number of seeding points}: Total number of seeding points for producing the final stream surface.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+	\centering
+	\includegraphics[height=\textheight]{figures/Slide19}
+\end{frame}
+
+\begin{frame}{}
+	\centering
+	\includegraphics[height=\textheight]{figures/Slide20}
 \end{frame}
 
 \begin{frame}{Acceleration Structures}
-	\begin{itemize}
-		\item Grid
-		\item Kd-tree
-		\item Bounding Volume Hierarchy (BVH)
-		\item Cell-tree \cite{GarthPaper}
-	\end{itemize}
-
-	\begin{figure}[!ht]
-		\centering
+	
+	\begin{columns}
+		\begin{column}{.49\textwidth}
+			\begin{itemize}
+				\item Grid
+				\item Kd-tree
+				\item Bounding Volume Hierarchy (BVH)
+				\item Cell-tree \cite{GarthPaper}
+			\end{itemize}
+		\end{column}
 		
-		
-		\caption{method}
-	\end{figure}
-
+		\begin{column}{.49\textwidth}
+			\begin{figure}[!ht]
+				\centering
+				\includegraphics[width=1.0\linewidth]{figures/accelstructs}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Why Acceleration Structures?}
@@ -339,22 +445,67 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Acceleration Structures Comparison Results}
+\begin{frame}{Acceleration Structures Evaluation Results}
 	\begin{itemize}
-		\item The origin...
+		\item Measured parameters:
+			 \begin{itemize}
+			 	\item \textbf{Avg. checks per traverse}: Average number of bounding box or point-inside-cell tests done to find the cell surrounding the sample point.
+			 	\item \textbf{Size in memory}: Size of the constructed acceleration structured in memory.
+			 \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+	\centering
+	\includegraphics[height=\textheight]{figures/Slide23}
+\end{frame}
+
+\begin{frame}{}
+	\centering
+	\includegraphics[height=\textheight]{figures/Slide25}
+\end{frame}
+
+\begin{frame}{}
+	\centering
+	\includegraphics[height=\textheight]{figures/Slide27}
+\end{frame}
+
+\begin{frame}{Acceleration Structures Evaluation Conclusion}
+	\begin{figure}[ht!]
+	\centering
+	\includegraphics[height=0.2\textheight]{figures/accelstructsConclusion}
+	\end{figure}
+	\begin{itemize}
+		\item When memory is the bottleneck \textit{Cell tree} is suitable (Cell tree size in memory is around 4-6 percent of original dataset).
+		\item Highest performance is achieved using \textit{Grid} (Grid performance is higher than BVH and cell tree when its size is higher than 25 percent of original dataset).
+		\item BVH seems like a balance between memory and performance (BVH size in memory in its highest performance is around 9-11 percent of original dataset).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{More information}
+	\begin{itemize}
+		\item More information can be found in original thesis slides and document (sent separately).
+		\item Available Result Videos:
+			\begin{itemize}
+				\item Stream Surface in Wind Tunnel dataset: \url{https://www.youtube.com/watch?v=DmGjogQDpyE}
+				\item Stream Surface in Tethrahedradecal Dataset: \url{https://www.youtube.com/watch?v=rdoRs-VpGhw}
+				\item Streamlines in Telescope Dataset: \url{https://www.youtube.com/watch?v=mln05oIApY0}
+			\end{itemize}
 	\end{itemize}
 \end{frame}
 
 %================================================
 %================================================
 
-\section{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+\section{Ray Tracing Revisited for Rendering CSG Models Consisting of Higher Order Primitives}
 
 \begin{frame}{Outline}
-	\tableofcontents
+	\tableofcontents[
+		currentsection,currentsubsection,hideothersubsections
+	]
 \end{frame}
 
-\begin{frame}{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
+\begin{frame}{Ray Tracing Revisited for Rendering CSG Models Consisting of Higher Order Primitives}
 	\begin{figure}[ht!]
 		\includegraphics[width=1.0\linewidth]{figures/Plant_Teaser.png}
 		\caption{
@@ -439,20 +590,165 @@
 %================================================
 %================================================
 
-\section{Voxel based path tracing}
+\section{Analysis of Voxel-Based Ray Tracing}
 
 \begin{frame}{Outline}
-	\tableofcontents
+	\tableofcontents[
+		currentsection,currentsubsection,hideothersubsections
+	]
 \end{frame}
 
-\begin{frame}{Ray tracing revisited for rendering CSG models consisting of higher order primitives}
-	\begin{figure}[ht!]
-		\includegraphics[width=1.0\linewidth]{figures/Plant_Teaser.png}
-		\caption{
-			A complex CAD scene built out of 8,000 individual plant models. In total, the scene consists of more than 100,000,000 non-planar second-order (cylinders, cones, etc.) and forth-order (tori) primitives, ray traced at more than 10~frames per second on 16 CPU
-			cores, including pixel-accurate shadows.
+\begin{frame}{Analysis of Voxel-Based Ray Tracing}
+	\begin{itemize}
+		\item \textbf{Goal}: Instrumenting voxel-based path-tracer with SIMD simulator to measure ray-sorting algorithms impact on SIMD units' efficiency.
+		\item  \textbf{Main Contribution}: Measure the impact of improving coherency methods (ray sorting) on instruction coherency of the rays.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Step 0: Implementing a Voxel-Based Path-Tracer}
+	\begin{figure}
+		\centering
+		\subfigure[Soft Shadow with Area Light]{
+			\includegraphics[width=0.3\linewidth]{figures/pathtracerResults1}
+		}
+		\subfigure[Global Illumination with Path Tracing]{
+			\includegraphics[width=0.3\linewidth]{figures/pathtracerResults0}
+		}
+		\subfigure[Cornell Box]{
+			\includegraphics[width=0.3\linewidth]{figures/pathtracerResults2}
 		}
 	\end{figure}
+\end{frame}
+
+\begin{frame}{BVH Traversal Main Operations which Cause Divergence in Instruction Execution}
+	\centering
+	\scalebox{0.6}{
+	\begin{minipage}{\linewidth}
+		\begin{algorithm}[H]
+			
+			%\REQUIRE Stack s is defined.
+			\While{$Finished \neq true$}{
+				\eIf{$CurrNode$ is $InteriorNode$}
+				{
+					%Check intersection with both childs of current node.\\
+					\eIf{intersection with both childs}
+					{
+					    $NextNode \leftarrow left child$\\
+						s.Push(RightChild) \textcolor{red}{\hfill Push and Traverse}\\
+					}
+					{
+						\eIf{intersection with one child}
+						{
+							 $NextNode \leftarrow Intersected Child$ \textcolor{red}{\hfill Traverse}\\
+						}
+						{
+							\eIf{not s.empty()}
+							{
+								$NextNode \leftarrow s.Pop()$
+							}
+							{
+								$Finished \leftarrow true$ \textcolor{red}{\hfill Finished}\\
+							}
+						}
+					}
+				}
+				{
+					Intersect with voxels related to the $leafnode$ to find the intersection. \textcolor{red}{\hfill Leaf Node Intersection}\\
+					\eIf{$found$ or $s.empty()$}
+					{
+						$Finished \leftarrow true$ \textcolor{red}{\hfill Finished}
+					}
+					{
+						$NextNode \leftarrow s.Pop()$
+					}	
+				}
+			}
+		\end{algorithm}
+	\end{minipage}%
+	}
+\end{frame}
+
+\begin{frame}{SIMD Simulator}
+	\begin{algorithm}[H]
+			Reset all ray's $InstCounter$ elements to zero.\\
+			$CurrStage \leftarrow 0$\\
+			\While{$Finished \neq true$}
+			{
+				\If{All rays has done their first $CurrStage$ operations}
+				{
+					$CurrStage$++\\
+					Continue\\
+				}
+				
+				$CurrOp \leftarrow FindNextOperationToExecute($CurrStage)\\
+				ExecuteSIMDUnitsWithNextOperation($CurrOp$)\\
+				\If{Any of SIMD Units are done}
+				{
+					deactivate the SIMD operation unit.
+				}
+			}
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}{Example of SIMD Simulation (Instruction Coherency)}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/SIMDExecEg}
+		\caption{An example of traversing the BVH-tree for 4 different rays on SIMD of width four.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Instruction Coherency Vs. Data Coherency}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figures/InstCohEg}
+		\caption{While both rays are perfectly instruction execution coherent, they are incoherent in data access.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Coherency Measurements for Path-Tracing Conference Room}
+	\begin{table}[ht]  
+		\centering % used for centering table 
+		\begin{tabular}{c c c c} % centered columns (4 columns) 
+			\hline %inserts double horizontal lines 
+			
+			Case & Primary Rays & Bounce 1 & Bounce 2 \\ [0.5ex] % inserts table 
+			%heading 
+			
+			\hline % inserts single horizontal line 
+			No Ray Sorting &  79.14\% & 49.53\% & 45.63\% \\ % inserting body of the table 
+			Ray Sorting by Direction & 79.14\% & 49.70\% & 48.3\% \\ 
+			Ray Sorting by Position &    79.14\% & 46.68\%  & 45.81\% \\ 
+			Ray Sorting by Both & 79.14\% & 49.73\% & 48.6\% \\ [1ex]
+			\hline %inserts single line 
+		\end{tabular} 
+	\caption{Total Ray Coherency For Different Bounces of Rays (SIMD width = 16) - Conference Room} % title of Table
+		\label{table:ConfRenderCoh} % is used to refer this table in the text 
+	\end{table} 
+\end{frame}
+
+\begin{frame}{Coherency Measurements for Path-Tracing Conference Room}
+	\begin{figure}
+		\centering
+		\subfigure[Primarys]{
+			\includegraphics[width=0.23\linewidth]{figures/GroupedHybridTraversal0}
+		}
+		\subfigure[Bounce 1]{
+			\includegraphics[width=0.23\linewidth]{figures/GroupedHybridTraversal1}
+		}
+		\subfigure[Bounce 2]{
+			\includegraphics[width=0.23\linewidth]{figures/GroupedHybridTraversal2}
+		}
+		\subfigure[Result]{
+			\includegraphics[width=0.23\linewidth]{figures/conferenceRoom}
+		}
+		\caption{Coherency textures for the case which rays are sorted based on their direction and orientation on every bounce (SIMD width = 16). Colormap used for visualizing coherency is shown in the bottom-right corner of the figures. The range is from 0-100 percent (red-blue).}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Similar Papers}
+	\begin{itemize}
+		\item \cite{Barringer:2014:DRS:2601097.2601222}, and \cite{pgs.20141257}
+		\item They also show that while ray sorting algorithms improve ray tracing performance, they are not very effective, i.e.~hopefully new approaches can be devised to make voxel-based ray tracing even faster.
+	\end{itemize}
 \end{frame}
 
 %================================================
@@ -461,23 +757,115 @@
 \section{Other Projects}
 
 \begin{frame}{Outline}
-	\tableofcontents
+	\tableofcontents[
+		currentsection,currentsubsection,hideothersubsections
+	]
 \end{frame}
 
 
 \begin{frame}{Practical Courses}
+	\begin{itemize}
+		\item Interactive Visual Data Analysis, Prof. Westermann Group.
+		\item GPU Programming in Computer Vision, Prof. Cremers Group.
+		\item Guided Research: Voxel-Based Path tracing, Prof. Westermann Group.
+		\item Interdisciplinary Project: 3D-Visualization of electromagnetic field strength	distribution, Prof. Guenthner (F{\"o}rdertechnik Materialfluss Logistik group in TU-Munich).
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{Computer Graphics related courses}
+\begin{frame}{Interactive Visual Data Analysis}
+	\begin{itemize}
+		\item Fundamental knowledge in the field of scientific visualization:
+		\begin{itemize}
+			\item Volume Visualization
+			\item Flow Visualization
+			\item GPGPU Programming
+			\item Done with C++, D3D11, and HLSL.
+		\end{itemize}
+		\item See results as a video on: \url{https://www.youtube.com/watch?v=7pIw5PjkjmY}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\subfigure{
+			\includegraphics[height=0.2\textheight]{figures/ivda1.jpg}
+		}
+		\subfigure{
+			\includegraphics[height=0.2\textheight]{figures/ivda2.jpg}
+		}
+		\subfigure{
+			\includegraphics[height=0.2\textheight]{figures/ivda3.jpg}
+		}
+	\end{figure}
+\end{frame}
+	
+\begin{frame}{GPU Programming in Computer Vision}
+	\begin{itemize}
+		\item Implementing \textit{Optical Flow} on GPU\\
+		\begin{figure}
+			\centering
+			\subfigure{
+				\includegraphics[height=0.25\textheight]{figures/optical_flow_a}
+			}
+			\subfigure{
+				\includegraphics[height=0.25\textheight]{figures/optical_flow_b}
+			}
+			\subfigure{
+				\includegraphics[height=0.25\textheight]{figures/optical_flow_c}
+			}
+		\end{figure}
+		\item Implementing \textit{Super Resolution} on GPU \\
+		\begin{figure}
+			\centering
+			\subfigure{
+				\includegraphics[height=0.35\textheight]{figures/super_resol_a}
+			}
+			\subfigure{
+				\includegraphics[height=0.35\textheight]{figures/super_resol_b}
+			}
+		\end{figure}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{MetaIO}
+\begin{frame}{Guided Research: Analysis of Voxel-Based Ray Tracing}
+	Described in previous slides...	
 \end{frame}
 
-\begin{frame}{Zull Dutch}
+\begin{frame}{Interdisciplinary Project: Implementing a framework for 3D Visualization of electromagnetic field strength distribution}
+	\begin{itemize}
+		\item Build a model of examined installation in 3d virtual world.
+			\begin{itemize}
+				\item fast and intractable (Using tracking system)
+			\end{itemize}
+		\item Visualizing 3d bars in virtual world to specify amount of data collected in each area.
+		\item Visualizing collected data using different techniques.
+			\begin{itemize}
+				\item Goal: Detecting weak/strong magnetic fields in different parts of environment.
+				\item Visualizing data using torus and sphere glyphs.
+				\item Visualizing data using direct volume rendering.
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{IDP}
+\begin{frame}{Interdisciplinary Project: Implementing a Framework for 3D Visualization of Electromagnetic Field Strength Distribution}
+	\begin{figure}
+		\centering
+		\subfigure[Torus Glyph]{
+			\includegraphics[width=0.30\linewidth]{figures/idp2}
+		}
+		\subfigure[Sphere Glyph]{
+			\includegraphics[width=0.30\linewidth]{figures/idp1}
+		}
+		\subfigure[Direct Volume Rendering]{
+			\includegraphics[width=0.30\linewidth]{figures/IDP_dvr}
+		}
+	\caption{Different visualization techniques used in this project (screenshots are not captured in for the same data).}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Related Courses}
+	\begin{itemize}
+		\item Computer Graphics related: Computer Graphics, Image Synthesis, Scientific Visualization, Augmented Reality, Computer Animation and Simulation.
+		\item Parallel Programming related: Parallel Programming, Advanced Computer Architecture.
+	\end{itemize}
 \end{frame}
 
 %================================================
@@ -486,10 +874,18 @@
 \section{Discussion}
 
 \begin{frame}{Outline}
-	\tableofcontents
+	\tableofcontents[
+		currentsection,currentsubsection,hideothersubsections
+	]
 \end{frame}
 
-\begin{frame}{What do you want to be known for in next.}
+\begin{frame}{Discussion}
+	\begin{itemize}
+		\item Prof. Slusallek: What do you want to be known for in next 5 years?
+		\item Me: I like \textbf{real-time rendering}. I would like to be known for improving rendering for \textbf{virtual reality} applications.
+		\item Prof. Slusallek: Are you mostly interested in implementation or theory?
+		\item Me: I like theories and try to study and understand them but I am mostly interested in \textbf{implementation}-wise works.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
