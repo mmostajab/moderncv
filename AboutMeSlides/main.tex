@@ -132,10 +132,10 @@
 	  \item My firsts...
 		  \begin{figure}
 			\centering
-			\subfigure[First Computer]{
+			\subfigure[First Computer (Commodore 64)]{
 				\includegraphics[height=0.2\textheight]{figures/commodore.jpg}
 			}
-			\subfigure[First IBM compatiable PC]{
+			\subfigure[First IBM compatiable PC (80286)]{
 				\includegraphics[height=0.2\textheight]{figures/PC286.jpg}
 			}
 			\subfigure[First Console (Atari 2600)]{
@@ -316,43 +316,43 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (1/7)}
+\begin{frame}{Heterogeneous Computing Architecture (1/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch1.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (2/7)}
+\begin{frame}{Heterogeneous Computing Architecture (2/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch2.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (3/7)}
+\begin{frame}{Heterogeneous Computing Architecture (3/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch3.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (4/7)}
+\begin{frame}{Heterogeneous Computing Architecture (4/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch4.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (5/7)}
+\begin{frame}{Heterogeneous Computing Architecture (5/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch5.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (6/7)}
+\begin{frame}{Heterogeneous Computing Architecture (6/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch6.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Model (7/7)}
+\begin{frame}{Heterogeneous Computing Architecture (7/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch7.PNG}
 	\end{figure}
@@ -482,7 +482,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{More information}
+\begin{frame}{More Information}
 	\begin{itemize}
 		\item More information can be found in original thesis slides and document (sent separately).
 		\item Available Result Videos:
@@ -561,7 +561,7 @@
 	\end{algorithm}
 \end{frame}
 
-\begin{frame}{Supported Higher order primitives}
+\begin{frame}{Supported Higher Order Primitives}
 	
 	\begin{figure}[ht!]
 		\centering
@@ -829,7 +829,7 @@
 	Described in previous slides...	
 \end{frame}
 
-\begin{frame}{Interdisciplinary Project: Implementing a framework for 3D Visualization of electromagnetic field strength distribution}
+\begin{frame}{Interdisciplinary Project: Implementing a Framework for 3D Visualization of Electromagnetic Field Strength Distribution}
 	\begin{itemize}
 		\item Build a model of examined installation in 3d virtual world.
 			\begin{itemize}
@@ -885,6 +885,34 @@
 		\item Me: I like \textbf{real-time rendering}. I would like to be known for improving rendering for \textbf{virtual reality} applications.
 		\item Prof. Slusallek: Are you mostly interested in implementation or theory?
 		\item Me: I like theories and try to study and understand them but I am mostly interested in \textbf{implementation}-wise works.
+	\end{itemize}
+\end{frame}
+
+%================================================
+%================================================
+
+\section{Current Status}
+
+\begin{frame}{Outline}
+	\tableofcontents[
+	currentsection,currentsubsection,hideothersubsections
+	]
+\end{frame}
+
+\begin{frame}{Current Status}
+	\begin{itemize}
+		\item Working at Fraunhofer IGD, Darmstadt as a Researcher.
+		\item Involved in two projects:
+			\begin{itemize}
+				\item \textbf{VELaSSCo EC Funded Project} (\url{http://www.velassco.eu/}).\\
+				
+				-- Our simulation models are stored in a Hadoop database (HBase) which is running on a HPC.\\
+				-- Idea: Doing post processing (mesh simplification, and streamline computation) on the HPC and send the result as triangle mesh for the client.\\
+				-- My task is to implement Fraunhofer IGD's visualization client, some of data access queries on HPC side, and streamline computation post processing technique on the HPC side using map-reduce.
+				\item an industrial project in collaboration with CST AG.\\
+				-- Worked on dynamic tessellating arc primitives in real-time on CPU and upload the triangles to the GPU.
+				\item \textbf{Both projects will be over soon (end of February 2017 is the final VELaSSCo review meeting) and that's a great time to leave Fraunhofer IGD :)}
+			\end{itemize}		
 	\end{itemize}
 \end{frame}
 
