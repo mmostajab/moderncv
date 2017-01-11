@@ -54,6 +54,8 @@
 %==================================
 \usepackage{subfigure}
 \usepackage[]{algorithm2e}
+\usepackage{apalike}
+%\usepackage{SCITEPRESS}
 %\usepackage{algorithm}
 %\usepackage{algorithmic}
 
@@ -94,9 +96,9 @@
 
 	\begin{itemize}
 		\item My name is \textbf{Morteza Mostajab}
-		\item Bachelor studies:\\ \textit{Hamedan University of Technology, Iran}
-		\item Maseter studies:\\ \textit{Technische Universit{\"a}t M{\"unchen}}
-		\item Present:\\ \textit{Researcher at Fraunhofer IGD, Darmstadt}
+		\item B.Sc. Computer Engineering at\\ \textit{Hamedan University of Technology, Iran}
+		\item M.Sc. Computer Science at\\ \textit{Technische Universit{\"a}t M{\"unchen}}
+		\item Working as Researcher at\\ \textit{Fraunhofer IGD, Darmstadt}
 		\item Research interests:\\
 		    \textit{Real-time physically-based rendering} \\
 			\textit{(Rasterization-based or Ray-tracing)}\\
@@ -211,12 +213,12 @@
 
 \begin{frame}{Main Contributions}
 	\begin{itemize}
-		\item Investigation techniques from ray tracing field for application in accurate streamline computation:\\
+		\item \textbf{Contribution 1}: Using heterogeneous computing:\\
+  		  -- Scale streamline computation on all capable devices.\\
+		  -- Scale rendering on all graphic processing units.\\
+		\item \textbf{Contribution 2}: Investigation techniques from ray tracing field for application in accurate streamline computation:\\
 		  -- Using acceleration structures\\
 		  -- Using ray-packing\\
-		\item Using heterogeneous computing:\\
-		  -- Scale streamline computation on all capable devices.\\
-		  -- Scale rendering on all graphic processing units.\\
 	\end{itemize}
 \end{frame}
 
@@ -316,43 +318,43 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (1/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (1/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch1.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (2/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (2/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch2.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (3/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (3/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch3.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (4/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (4/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch4.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (5/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (5/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch5.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (6/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (6/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch6.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Heterogeneous Computing Architecture (7/7)}
+\begin{frame}{Contrib. 1: Heterogeneous Computing Arch. (7/7)}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{figures/MAarch7.PNG}
 	\end{figure}
@@ -410,6 +412,20 @@
 	\includegraphics[height=\textheight]{figures/Slide20}
 \end{frame}
 
+\begin{frame}{Heterogeneous Computing Results Conclusions}
+	\begin{itemize}
+		\item As expected, the streamline computation is being scaled on all available computation devices.
+		\item Using both GPUS and CPU, the computation performance is doubled.
+		\item Limiting factors:\\
+			\begin{itemize}
+				\item OpenGL operations cannot be parallelized.
+				\item Synchronization of threads are a overhead.
+				\item \textbf{Dynamic task scheduling} could be a better approach.				
+			\end{itemize}
+		\item There is an overhead for initializing computations on multiple devices.
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Acceleration Structures}
 	
 	\begin{columns}
@@ -445,7 +461,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Acceleration Structures Evaluation Results}
+\begin{frame}{Contrib. 2: Using Acceleration Structures for Streamline Computation Evaluations}
 	\begin{itemize}
 		\item Measured parameters:
 			 \begin{itemize}
@@ -541,7 +557,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Optimized Hitpoint Calculation}
+\begin{frame}{Contribution: Optimized Hitpoint Calculation}
 	\begin{algorithm}[H]
 		\BLUECOMMENT {$ray$: current ray hitting a primitive}\\
 		\vspace{0.5mm}
@@ -605,7 +621,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Step 0: Implementing a Voxel-Based Path-Tracer}
+\begin{frame}{Basis for Evaluations: Implementing a Voxel-Based Path-Tracer}
 	\begin{figure}
 		\centering
 		\subfigure[Soft Shadow with Area Light]{
@@ -618,9 +634,22 @@
 			\includegraphics[width=0.3\linewidth]{figures/pathtracerResults2}
 		}
 	\end{figure}
+\begin{center}
+    All scenes are described with a hierarchy of 3d voxels.
+\end{center}
+
 \end{frame}
 
-\begin{frame}{BVH Traversal Main Operations which Cause Divergence in Instruction Execution}
+\begin{frame}{BVH Traversal Main Operations Classification (1/2)}
+	\begin{itemize}
+		\item \textbf{Push and Traverse} Ray is intersecting with both child nodes. One should be chosen and the other one should be kept in the stack.
+		\item \textbf{Traverse} Ray is intersecting with one of the child nodes. The traversal path is clear.
+		\item \textbf{Leaf Node Intersection} Intersection test should be done for leaf nodes.
+		\item \textbf{Finished} Traversal is done.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{BVH Traversal Main Operations Classification (2/2)}
 	\centering
 	\scalebox{0.6}{
 	\begin{minipage}{\linewidth}
@@ -668,7 +697,7 @@
 	}
 \end{frame}
 
-\begin{frame}{SIMD Simulator}
+\begin{frame}{Our SIMD Simulator}
 	\begin{algorithm}[H]
 			Reset all ray's $InstCounter$ elements to zero.\\
 			$CurrStage \leftarrow 0$\\
@@ -704,7 +733,7 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Coherency Measurements for Path-Tracing Conference Room}
+\begin{frame}{Contribution: Coherency Measurements Results for Path-Tracing "Conference Room" (1/2)}
 	\begin{table}[ht]  
 		\centering % used for centering table 
 		\begin{tabular}{c c c c} % centered columns (4 columns) 
@@ -725,7 +754,7 @@
 	\end{table} 
 \end{frame}
 
-\begin{frame}{Coherency Measurements for Path-Tracing Conference Room}
+\begin{frame}{Contribution: Coherency Measurements Results for Path-Tracing "Conference Room" (2/2)}
 	\begin{figure}
 		\centering
 		\subfigure[Primarys]{
@@ -825,9 +854,9 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Guided Research: Analysis of Voxel-Based Ray Tracing}
-	Described in previous slides...	
-\end{frame}
+%\begin{frame}{Guided Research: Analysis of Voxel-Based Ray Tracing}
+%	Described in previous slides...	
+%\end{frame}
 
 \begin{frame}{Interdisciplinary Project: Implementing a Framework for 3D Visualization of Electromagnetic Field Strength Distribution}
 	\begin{itemize}
@@ -918,7 +947,8 @@
 
 \begin{frame}[allowframebreaks]
 	\frametitle{References}
-	\bibliographystyle{amsalpha}
+%	\bibliographystyle{amsalpha}
+	\bibliographystyle{apalike}
 	\bibliography{bibliography}
 \end{frame}
 
