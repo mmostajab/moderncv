@@ -943,6 +943,13 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{VELaSSCo EC Funded Project}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{figures/streamlines17}
+	\end{figure}
+\end{frame}
+
 \section{Dynamic Arc Tessellation}
 
 \begin{frame}{Outline}
@@ -955,7 +962,45 @@
 	\begin{itemize}
 		\item an industrial project in collaboration with CST AG.\\
 		-- Dynamic tessellating arc primitives in real-time on CPU and upload the triangles to the GPU to be rendered.
+		\item Frustum culling and drop culling were used to only tessellated ones that are in the viewport.
 	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.3\textheight]{figures/arcpipeline}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Dynamic Arc Tessellation}
+	\begin{itemize}
+		\item Approximately 162K dynamic triangles
+		\item Approximately 468K static triangles
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/cst1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Dynamic Arc Tessellation}
+	\begin{itemize}
+		\item Approximately 290K dynamic triangles
+		\item Approximately 468K static triangles
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/cst2}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Dynamic Arc Tessellation}
+	\begin{itemize}
+		\item Approximately 98K dynamic triangles
+		\item Approximately 468K static triangles
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/cst3}
+	\end{figure}
 \end{frame}
 
 %\begin{frame}{Outline}
